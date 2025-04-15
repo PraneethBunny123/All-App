@@ -1,4 +1,4 @@
-import profilecard from '../images/profilecard.jpg'
+import profilecard from '../../images/profilecard.jpg'
 
 export default function ProfileCard({name, bio}) {
 
