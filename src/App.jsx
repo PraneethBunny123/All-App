@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       {/*<ProfileCard name='Praneeth' bio='I am learning react through projects '/>*/}
-      <Counter />
+      {/*<Counter />*/}
     </div>
   )
 }
