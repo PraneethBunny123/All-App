@@ -1,11 +1,10 @@
-
-import './App.css'
+import ProfileCard from './project-apps/ProfileCard'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-green-700'>Hello world</h1>
+      <ProfileCard name='Praneeth' bio='I am learning react through projects '/>
     </>
   )
 }
