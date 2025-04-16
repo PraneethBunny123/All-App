@@ -1,5 +1,7 @@
 import { useRef, useState } from "react"
 import DUMMY_TASKS from "./tasks"
+import AddTaskFeature from "./AddTask"
+import ListRender from "./ListRender"
 
 export default function FinalTodoApp() {
 
@@ -7,12 +9,14 @@ export default function FinalTodoApp() {
     const [tasks, setTasks] = useState(DUMMY_TASKS)
     const [searchInput, setSearchInput] = useState('')
    
-    const filteredDate = tasks.filter(task => (
-        task.includes(searchInput)
+    const filteredData = tasks.filter(task => (
+        task.toLowerCase().includes(searchInput.toLowerCase())
     ))
 
     function handleAddTask() {
-        const newTask = inputRef.current.value
+        const newTask = inputRef.current.value.trim()
+        if(!newTask) return
+
         setTasks(prevState => (
             [...tasks, newTask]
         ))
@@ -40,22 +44,9 @@ export default function FinalTodoApp() {
 
                 />
             </div>
-            <div>
-                <input 
-                    type="text"
-                    placeholder="Add new task"
-                    ref={inputRef}
-                />
-                <button onClick={handleAddTask}>Add Task</button>
-            </div>
+            <AddTaskFeature inputRef={inputRef} handleAddTask={handleAddTask}/>
             <h2>Task list</h2>
-            <ul>
-                {filteredDate.map((task, index) => (
-                    <li key={index}>
-                        <span>{task}</span> <button onClick={() => handleDelete(task)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
+            <ListRender filteredData={filteredData} handleDelete={handleDelete}/>
         </div>
     )
 }
