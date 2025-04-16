@@ -3,6 +3,7 @@ import Counter from './project-apps/Counter/Counter'
 import CounterReducer from './project-apps/Counter/CounterReducer'
 import ListRender from './project-apps/Todo App/ListRender'
 import TaskFilter from './project-apps/Todo App/TaskFilter'
+import AddTask from './project-apps/Todo App/AddTask'
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
       {/*<Counter />*/}
       {/*<CounterReducer />*/}
       {/*<ListRender />*/}
-      <TaskFilter />
+      {/*<TaskFilter />*/}
+      <AddTask />
     </div>
   )
 }
