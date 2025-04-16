@@ -6,6 +6,7 @@ import TaskFilter from './project-apps/Todo App/TaskFilter'
 import AddTask from './project-apps/Todo App/AddTask'
 import AddTaskRef from './project-apps/Todo App/AddTaskRef'
 import DeleteTask from './project-apps/Todo App/DeleteTask'
+import FinalTodoApp from './project-apps/Todo App/FinalTodoApp'
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
       {/*<TaskFilter />*/}
       {/*<AddTask />*/}
       {/*<AddTaskRef />*/}
-      <DeleteTask />
+      {/*<DeleteTask />*/}
+      <FinalTodoApp />
     </div>
   )
 }
