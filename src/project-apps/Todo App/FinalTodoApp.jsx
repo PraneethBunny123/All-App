@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import DUMMY_TASKS from "./tasks"
 import AddTaskFeature from "./AddTask"
 import ListRender from "./ListRender"
@@ -6,8 +6,16 @@ import ListRender from "./ListRender"
 export default function FinalTodoApp() {
 
     const inputRef = useRef()
-    const [tasks, setTasks] = useState(DUMMY_TASKS)
+    const [tasks, setTasks] = useState(() => {
+        const storedData = localStorage.getItem('final-todo-app')
+        return storedData? JSON.parse(storedData) : DUMMY_TASKS
+    })
     const [searchInput, setSearchInput] = useState('')
+
+
+    useEffect(() => {
+        localStorage.setItem('final-todo-app', JSON.stringify(tasks))
+    }, [tasks])
    
     const filteredData = tasks.filter(task => (
         task.toLowerCase().includes(searchInput.toLowerCase())
