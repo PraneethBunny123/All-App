@@ -5,6 +5,7 @@ import ListRender from './project-apps/Todo App/ListRender'
 import TaskFilter from './project-apps/Todo App/TaskFilter'
 import AddTask from './project-apps/Todo App/AddTask'
 import AddTaskRef from './project-apps/Todo App/AddTaskRef'
+import DeleteTask from './project-apps/Todo App/DeleteTask'
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
       {/*<ListRender />*/}
       {/*<TaskFilter />*/}
       {/*<AddTask />*/}
-      <AddTaskRef />
+      {/*<AddTaskRef />*/}
+      <DeleteTask />
     </div>
   )
 }
