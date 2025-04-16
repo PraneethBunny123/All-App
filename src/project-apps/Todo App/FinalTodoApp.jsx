@@ -35,18 +35,20 @@ export default function FinalTodoApp() {
     
 
     return (
-        <div>
-            <div>
-                <input 
-                    type="text"
-                    placeholder="search tasks..."
-                    onChange={handleSearchInput}
-
-                />
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+            <div className="bg-white shadow-md rounded-xl p-6 w-full max-w-md">
+                <div className="mb-4">
+                    <input 
+                        type="text"
+                        placeholder="search tasks..."
+                        onChange={handleSearchInput}
+                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                </div>
+                <AddTaskFeature inputRef={inputRef} handleAddTask={handleAddTask}/>
+                <h2 className="text-lg font-semibold mb-2 text-center text-gray-700">Task list</h2>
+                <ListRender filteredData={filteredData} handleDelete={handleDelete}/>
             </div>
-            <AddTaskFeature inputRef={inputRef} handleAddTask={handleAddTask}/>
-            <h2>Task list</h2>
-            <ListRender filteredData={filteredData} handleDelete={handleDelete}/>
         </div>
     )
 }

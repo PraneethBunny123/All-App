@@ -29,10 +29,19 @@
 
 export default function ListRender({filteredData, handleDelete}) {
     return (
-        <ul>
+        <ul className="space-y-2">
             {filteredData.map((task, index) => (
-                <li key={index}>
-                    <span>{task}</span> <button onClick={() => handleDelete(task)}>Delete</button>
+                <li 
+                    key={index}
+                    className="flex justify-between items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-md shadow-sm"
+                >
+                    <span>{task}</span> 
+                    <button 
+                        onClick={() => handleDelete(task)}
+                        className="text-red-500 hover:text-red-700 font-semibold"
+                    >
+                        Delete
+                    </button>
                 </li>
             ))}
         </ul>
