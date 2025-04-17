@@ -7,6 +7,7 @@ import AddTask from './project-apps/Todo App/AddTask'
 import AddTaskRef from './project-apps/Todo App/AddTaskRef'
 import DeleteTask from './project-apps/Todo App/DeleteTask'
 import FinalTodoApp from './project-apps/Todo App/FinalTodoApp'
+import WeatherApp from './project-apps/Weather App/WeatherApp'
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
       {/*<AddTask />*/}
       {/*<AddTaskRef />*/}
       {/*<DeleteTask />*/}
-      <FinalTodoApp />
+      {/*<FinalTodoApp />*/}
+      <WeatherApp />
     </div>
   )
 }
