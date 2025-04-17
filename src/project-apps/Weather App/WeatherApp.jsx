@@ -15,6 +15,7 @@ export default function WeatherApp() {
     }
 
     async function fetchWeatherData() {
+        setCity('')
         const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
 
         if(!response.ok) {
@@ -22,8 +23,9 @@ export default function WeatherApp() {
         }
 
         const resData = await response.json()
-        console.log(resData)
         setWeatherData(resData)
+
+
     }
 
     return (
@@ -32,6 +34,7 @@ export default function WeatherApp() {
             <SearchBar 
                 handleChange={handleChange}
                 handleFetch={fetchWeatherData}
+                city={city}
             />
             <WeatherCard weatherData={weatherData}/>
         </div>

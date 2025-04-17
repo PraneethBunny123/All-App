@@ -23,7 +23,7 @@ export default function WeatherCard({weatherData}) {
             <h1>{cityName ? `Todays weather at ${cityName}` : null}</h1>
             <p>{description}</p>
             <p>{fahrenheitTemperature ? `temperature: ${fahrenheitTemperature} degrees fahrenheit` : null}</p>
-            {icon ? <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} /> : null}
+            {icon ? <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt={description} /> : null}
 
             {weatherData && <ForeCastList forecastList={filteredTempearture}/>}
         </div>
