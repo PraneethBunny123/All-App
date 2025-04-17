@@ -1,10 +1,14 @@
+import ForeCastList from "./ForeCastList"
+import kelvinToFahrenheit from "./kelvinToFahrenheit"
+
 export default function WeatherCard({weatherData}) {
 
-    const cityName = weatherData?.city?.name
-    const temp = weatherData?.list[0]?.main?.temp
-    const description = weatherData?.list[0]?.weather[0]?.description
-    const icon = weatherData?.list[0]?.weather[0]?.icon
-    const dt_txt = weatherData?.list[0]?.dt_txt
+    const cityName = weatherData?.city.name
+    const temp = weatherData?.list[0].main.temp
+    const feelsLike = weatherData?.list[0].main.feels_like
+    const description = weatherData?.list[0].weather[0].description
+    const icon = weatherData?.list[0]?.weather[0].icon
+    const dt_txt = weatherData?.list[0].dt_txt
 
     const filteredTempearture = weatherData?.list.filter(obj => (
         obj?.dt_txt.includes('12:00:00')
@@ -12,7 +16,7 @@ export default function WeatherCard({weatherData}) {
 
     console.log(filteredTempearture)
     
-    const fahrenheitTemperature = ((temp-273.15)*9/5)+32
+    const fahrenheitTemperature = kelvinToFahrenheit(temp)
 
     return (
         <div>
@@ -20,6 +24,8 @@ export default function WeatherCard({weatherData}) {
             <p>{description}</p>
             <p>{fahrenheitTemperature ? `temperature: ${fahrenheitTemperature} degrees fahrenheit` : null}</p>
             {icon ? <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} /> : null}
+
+            {weatherData && <ForeCastList forecastList={filteredTempearture}/>}
         </div>
     )
 }
