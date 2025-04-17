@@ -13,8 +13,6 @@ export default function WeatherCard({weatherData}) {
     const filteredTempearture = weatherData?.list.filter(obj => (
         obj?.dt_txt.includes('12:00:00')
     ))
-
-    console.log(filteredTempearture)
     
     const fahrenheitTemperature = kelvinToFahrenheit(temp)
 
@@ -24,8 +22,9 @@ export default function WeatherCard({weatherData}) {
             <p>{description}</p>
             <p>{fahrenheitTemperature ? `temperature: ${fahrenheitTemperature} degrees fahrenheit` : null}</p>
             {icon ? <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt={description} /> : null}
-
-            {weatherData && <ForeCastList forecastList={filteredTempearture}/>}
+            <div>
+                {weatherData && <ForeCastList forecastList={filteredTempearture}/>}
+            </div>
         </div>
     )
 }
