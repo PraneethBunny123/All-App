@@ -5,6 +5,12 @@ export default function WeatherCard({weatherData}) {
     const description = weatherData?.list[0]?.weather[0]?.description
     const icon = weatherData?.list[0]?.weather[0]?.icon
     const dt_txt = weatherData?.list[0]?.dt_txt
+
+    const filteredTempearture = weatherData?.list.filter(obj => (
+        obj?.dt_txt.includes('12:00:00')
+    ))
+
+    console.log(filteredTempearture)
     
     const fahrenheitTemperature = ((temp-273.15)*9/5)+32
 
