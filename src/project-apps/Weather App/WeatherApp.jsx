@@ -17,9 +17,13 @@ export default function WeatherApp() {
     async function fetchWeatherData() {
         const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
 
-        const resData = response.json()
-        console.log(response)
+        if(!response.ok) {
+            throw new Error('city not found')
+        }
+
+        const resData = await response.json()
         console.log(resData)
+        setWeatherData(resData)
     }
 
     return (
@@ -29,7 +33,7 @@ export default function WeatherApp() {
                 handleChange={handleChange}
                 handleFetch={fetchWeatherData}
             />
-            <WeatherCard city={city}/>
+            <WeatherCard weatherData={weatherData}/>
         </div>
     )
 }
