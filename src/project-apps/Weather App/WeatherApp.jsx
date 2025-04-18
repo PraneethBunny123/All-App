@@ -28,8 +28,9 @@ export default function WeatherApp() {
             setWeatherData(resData)
         } catch(err) {
             setError(err.message)
+        } finally {
+            setIsLoading(false)
         }
-        setIsLoading(false)
 
     }
 
