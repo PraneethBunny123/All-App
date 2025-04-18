@@ -2,11 +2,10 @@ import { createPortal } from "react-dom"
 import ForecastCard from "./ForecastCard"
 
 const ForecastModal = ({data, dialogRef}) => {
-    // const dialogRef = useRef()
 
     return createPortal(
         <dialog ref={dialogRef}>
-            <ForecastCard data={data}/>
+            <ForecastCard data={data} variant="modal"/>
         </dialog>,
         document.getElementById('modal')
     )
