@@ -15,14 +15,18 @@ export default function WeatherCard({weatherData}) {
     ))
     
     return (
-        <div>
+        <div className="bg-white rounded-xl shadow-xl p-6 w-full max-w-md text-center">
             {weatherData &&
                 <div>
-                    <h1>Today's weather at {cityName}</h1>
-                    <p>{description}</p>
-                    <p>temperature: {temp} degrees fahrenheit</p>
-                    <p>feels like: {feelsLike} degrees fahrenheit</p>
-                    <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt={description} />
+                    <h1 className="text-xl font-semibold text-gray-800 mb-2">Today's weather at {cityName}</h1>
+                    <p className="text-gray-600 capitalize">{description}</p>
+                    <p className="mt-2 text-lg font-medium">temperature: {temp} degrees fahrenheit</p>
+                    <p className="text-sm text-gray-500 mb-2">feels like: {feelsLike} degrees fahrenheit</p>
+                    <img 
+                        src={`https://openweathermap.org/img/wn/${icon}@2x.png`} 
+                        alt={description} 
+                        className="mx-auto mb-4"    
+                    />
                         
                     <ForecastList forecastList={filteredTempearture}/>
                 </div>
