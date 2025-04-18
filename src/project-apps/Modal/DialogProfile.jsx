@@ -5,13 +5,17 @@ const DialogProfile = () => {
 
     const dialogRef = useRef()
 
-    function openModal() {
+    function handleOpenModal() {
         dialogRef.current.showModal()
+    }
+
+    function handleCloseModal() {
+        dialogRef.current.closeModal()
     }
 
     return (
         <div>
-            <button onClick={openModal}>View profile dialog</button>
+            <button onClick={handleOpenModal}>View profile dialog</button>
             <DialogModal dialogRef={dialogRef}>
                 <div>
                     <h1>praneeth</h1>
