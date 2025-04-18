@@ -42,6 +42,7 @@ export default function WeatherApp() {
                 handleChange={handleChange}
                 handleFetch={fetchWeatherData}
                 city={city}
+                isLoading={isLoading}
             />
             {isLoading && <p className="text-white mt-4">Loading weather data...</p>}
             {!isLoading &&
