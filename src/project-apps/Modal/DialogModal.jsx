@@ -1,15 +1,14 @@
 import { createPortal } from "react-dom"
 
-export default function DialogModal({children, dialogRef}) {
-
+export default function DialogModal({ children, dialogRef }) {
     function handleCloseModal() {
         dialogRef.current.close()
     }
 
     return createPortal(
-        <dialog 
-            ref={dialogRef} 
-            className="rounded-xl p-6 w-full max-w-md shadow-2xl bg-white relative open:animate-fade-in"
+        <dialog
+            ref={dialogRef}
+            className="p-6 rounded-xl w-full max-w-md bg-white shadow-xl relative open:fixed open:inset-0 open:flex open:items-center open:justify-center"
         >
             <button
                 onClick={handleCloseModal}
@@ -19,6 +18,6 @@ export default function DialogModal({children, dialogRef}) {
             </button>
             {children}
         </dialog>,
-        document.getElementById('modal')
+        document.getElementById("modal")
     )
 }
