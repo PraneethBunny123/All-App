@@ -24,9 +24,9 @@ function App() {
       {/*<AddTaskRef />*/}
       {/*<DeleteTask />*/}
       {/*<FinalTodoApp />*/}
-      {/*<WeatherApp />*/}
+      <WeatherApp />
       {/*<Profile />*/}
-      <DialogProfile />
+      {/*<DialogProfile />*/}
     </div>
   )
 }
