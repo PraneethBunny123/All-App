@@ -9,6 +9,7 @@ import DeleteTask from './project-apps/Todo App/DeleteTask'
 import FinalTodoApp from './project-apps/Todo App/FinalTodoApp'
 import WeatherApp from './project-apps/Weather App/WeatherApp'
 import Profile from './project-apps/Modal/Profile'
+import DialogProfile from './project-apps/Modal/DialogProfile'
 
 function App() {
 
@@ -24,7 +25,8 @@ function App() {
       {/*<DeleteTask />*/}
       {/*<FinalTodoApp />*/}
       {/*<WeatherApp />*/}
-      <Profile />
+      {/*<Profile />*/}
+      <DialogProfile />
     </div>
   )
 }
