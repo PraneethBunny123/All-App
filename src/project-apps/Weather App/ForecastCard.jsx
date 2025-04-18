@@ -1,6 +1,7 @@
 import kelvinToFahrenheit from "./kelvinToFahrenheit"
 
-export default function ForecastCard({data}) {
+export default function ForecastCard({data, handleOpenModal}) {
+
     const day = new Date(data.dt_txt).toLocaleDateString('en-us', {weekday: 'long'})
     const date = new Date(data.dt_txt).toLocaleDateString('en-us', {
         month: 'short',
@@ -13,9 +14,8 @@ export default function ForecastCard({data}) {
     const icon = data.weather[0].icon
 
     return (
-        <button>
+        <button onClick={handleOpenModal}>
             <div 
-                
                 className="bg-blue-100 rounded-lg p-4 shadow hover:shadow-md transition hover:scale-105 transition-transform duration-200"
             >
                 <p className="font-semibold">{day} - {date}</p>
