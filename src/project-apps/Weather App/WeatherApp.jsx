@@ -15,16 +15,21 @@ export default function WeatherApp() {
     }
 
     async function fetchWeatherData() {
+        setIsLoading(true)
         setCity('')
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
+        try {
+            const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
 
-        if(!response.ok) {
-            throw new Error('city not found')
+            if(!response.ok) {
+                throw new Error('city not found')
+            }
+
+            const resData = await response.json()
+            setWeatherData(resData)
+        } catch(err) {
+            setError(err.message)
         }
-
-        const resData = await response.json()
-        setWeatherData(resData)
-
+        setIsLoading(false)
 
     }
 
@@ -36,7 +41,11 @@ export default function WeatherApp() {
                 handleFetch={fetchWeatherData}
                 city={city}
             />
-            <WeatherCard weatherData={weatherData}/>
+            {isLoading && <p>Loading weather data...</p>}
+            {!isLoading &&
+                <WeatherCard weatherData={weatherData}/>
+            }
+            {error && <p>{error}</p>}
         </div>
     )
 }
