@@ -10,7 +10,7 @@ const ForecastModal = ({data, dialogRef, onClose}) => {
     return createPortal(
         <dialog 
             ref={dialogRef} 
-            className="rounded-lg p-6 bg-white w-[90%] max-w-md shadow-xl relative"    
+            className="backdrop:bg-black/50 rounded-xl p-4 w-[90%] max-w-md shadow-xl bg-white"    
         >
             <button 
                 onClick={handleModalClose}
