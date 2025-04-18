@@ -7,15 +7,11 @@ export default function Profile() {
     function handleViewProfile() {
         setOpen(true)
     }
-    
-    function handleClose() {
-        setOpen(false)
-    }
 
     return (
         <div>
             <button onClick={handleViewProfile}>View profile</button>
-            <Modal open={open} handleClose={handleClose}>
+            <Modal open={open} onClick={() => setOpen(false)}>
                 <div>
                     <h1>praneeth</h1>
                     <p>age: 24</p>

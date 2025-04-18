@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 
-export default function Modal({children, open, handleClose}) {
+export default function Modal({children, open, ...props}) {
 
     if(!open) return null
 
@@ -9,7 +9,7 @@ export default function Modal({children, open, handleClose}) {
         <div className="bg-white rounded-lg p-6 shadow-lg relative">
             {children}
             <button 
-                onClick={handleClose}
+                {...props}
                 className="absolute top-2 right-2 text-gray-500 hover:text-black"
             >✖</button>
         </div>
