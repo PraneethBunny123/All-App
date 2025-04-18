@@ -16,6 +16,7 @@ export default function WeatherApp() {
 
     async function fetchWeatherData() {
         setIsLoading(true)
+        setError(null)
         setCity('')
         try {
             const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
@@ -35,18 +36,18 @@ export default function WeatherApp() {
     }
 
     return (
-        <div>
-            <h1>Weather App</h1>
+        <div className="min-h-screen bg-gradient-to-r from-blue-200 to-blue-500 flex flex-col items-center p-4">
+            <h1 className="text-3xl font-bold text-white mb-6">Weather App</h1>
             <SearchBar 
                 handleChange={handleChange}
                 handleFetch={fetchWeatherData}
                 city={city}
             />
-            {isLoading && <p>Loading weather data...</p>}
+            {isLoading && <p className="text-white mt-4">Loading weather data...</p>}
             {!isLoading &&
                 <WeatherCard weatherData={weatherData}/>
             }
-            {error && <p>{error}</p>}
+            {error && <p className="text-red-700 bg-white px-4 py-2 rounded shadow mt-4">{error}</p>}
         </div>
     )
 }

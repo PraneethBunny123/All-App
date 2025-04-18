@@ -1,4 +1,4 @@
-import ForeCastList from "./ForeCastList"
+import ForecastList from "./ForeCastList"
 import kelvinToFahrenheit from "./kelvinToFahrenheit"
 
 export default function WeatherCard({weatherData}) {
@@ -24,7 +24,7 @@ export default function WeatherCard({weatherData}) {
                     <p>feels like: {feelsLike} degrees fahrenheit</p>
                     <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt={description} />
                         
-                    <ForeCastList forecastList={filteredTempearture}/>
+                    <ForecastList forecastList={filteredTempearture}/>
                 </div>
             }
         </div>

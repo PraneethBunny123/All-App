@@ -1,6 +1,6 @@
 import kelvinToFahrenheit from "./kelvinToFahrenheit"
 
-export default function ForeCastList({forecastList}) {
+export default function ForecastList({forecastList}) {
 
     return (
         <div>
