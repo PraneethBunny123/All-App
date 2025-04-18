@@ -1,9 +1,10 @@
 import { createPortal } from "react-dom"
 import ForecastCard from "./ForecastCard"
 
-const ForecastModal = ({data, dialogRef}) => {
+const ForecastModal = ({data, dialogRef, onClose}) => {
     function handleModalClose() {
-        dialogRef.current.close()
+        dialogRef.current?.close()
+        onClose()
     }
 
     return createPortal(

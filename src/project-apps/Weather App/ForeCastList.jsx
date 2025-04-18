@@ -9,7 +9,10 @@ export default function ForecastList({forecastList}) {
     
     function handleOpenModal(data) {
         setSelectedCard(data)
-        dialogRef.current?.showModal()
+        setTimeout(() => {
+            dialogRef.current?.showModal()
+        }, 0)
+        
     }
 
     return (
@@ -21,7 +24,11 @@ export default function ForecastList({forecastList}) {
                 ))}
             </div>
             {selectedCard && 
-                <ForecastModal data={selectedCard} dialogRef={dialogRef}/>
+                <ForecastModal 
+                    data={selectedCard} 
+                    dialogRef={dialogRef}
+                    onClose={() => setSelectedCard(null)}    
+                />
             }
         </div>
     )
