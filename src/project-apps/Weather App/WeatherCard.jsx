@@ -21,7 +21,7 @@ export default function WeatherCard({weatherData}) {
                     <h1 className="text-xl font-semibold text-gray-800 mb-2">Today's weather at {cityName}</h1>
                     <p className="text-gray-600 capitalize">{description}</p>
                     <p className="mt-2 text-lg font-medium">temperature: {temp} degrees fahrenheit</p>
-                    <p className="text-sm text-gray-500 mb-2">feels like: {feelsLike} degrees fahrenheit</p>
+                    <p className="text-sm text-gray-500 mb-2">feels like: {feelsLike}°F</p>
                     <img 
                         src={`https://openweathermap.org/img/wn/${icon}@2x.png`} 
                         alt={description} 
