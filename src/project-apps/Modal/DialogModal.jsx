@@ -7,10 +7,13 @@ export default function DialogModal({children, dialogRef}) {
     }
 
     return createPortal(
-        <dialog ref={dialogRef} className="rounded-lg p-6 shadow-xl">
+        <dialog 
+            ref={dialogRef} 
+            className="rounded-xl p-6 w-full max-w-md shadow-2xl bg-white relative open:animate-fade-in"
+        >
             <button
                 onClick={handleCloseModal}
-                className="absolute top-2 right-2 text-gray-500 hover:text-black"
+                className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl"
             >
                 ❌
             </button>
