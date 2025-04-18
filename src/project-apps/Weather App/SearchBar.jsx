@@ -2,7 +2,6 @@ export default function SearchBar({ handleChange, handleFetch, city, isLoading }
     function handleEnterKey(e) {
         if(e.key === 'Enter') handleFetch()
     }
-    console.log(isLoading);
     
 
     return (
@@ -25,3 +24,4 @@ export default function SearchBar({ handleChange, handleFetch, city, isLoading }
         </div>
     )
 }
+
