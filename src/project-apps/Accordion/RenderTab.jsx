@@ -5,10 +5,11 @@ export default function RenderTab() {
     const [currentTabData, setCurrentTabData] = useState(null)
 
     function handleClick(data) {
-        setCurrentTabData(data)
+        if(currentTabData?.id === data.id) {
+            setCurrentTabData(null)
+        }else
+            setCurrentTabData(data)
     }
-
-    console.log(currentTabData)
 
     return (
         <div>
@@ -16,6 +17,7 @@ export default function RenderTab() {
                 {TABS.map(data => (
                     <li key={data.label}>
                         <button onClick={() => handleClick(data)}>{data.label}</button>
+                        {currentTabData?.id === data.id && <p>{data.content}</p>}
                     </li>
                 ))}
             </ul>
