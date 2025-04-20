@@ -10,6 +10,7 @@ import FinalTodoApp from './project-apps/Todo App/FinalTodoApp'
 import WeatherApp from './project-apps/Weather App/WeatherApp'
 import Profile from './project-apps/Modal/Profile'
 import DialogProfile from './project-apps/Modal/DialogProfile'
+import RenderList from './project-apps/Accordion/RenderList'
 
 function App() {
 
@@ -24,9 +25,10 @@ function App() {
       {/*<AddTaskRef />*/}
       {/*<DeleteTask />*/}
       {/*<FinalTodoApp />*/}
-      <WeatherApp />
+      {/*<WeatherApp />*/}
       {/*<Profile />*/}
       {/*<DialogProfile />*/}
+      <RenderList />
     </div>
   )
 }
