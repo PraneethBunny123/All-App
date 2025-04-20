@@ -11,6 +11,7 @@ import WeatherApp from './project-apps/Weather App/WeatherApp'
 import Profile from './project-apps/Modal/Profile'
 import DialogProfile from './project-apps/Modal/DialogProfile'
 import RenderList from './project-apps/Accordion/RenderList'
+import RenderTab from './project-apps/Accordion/RenderTab'
 
 function App() {
 
@@ -28,7 +29,8 @@ function App() {
       {/*<WeatherApp />*/}
       {/*<Profile />*/}
       {/*<DialogProfile />*/}
-      <RenderList />
+      {/*<RenderList />*/}
+      <RenderTab />
     </div>
   )
 }
