@@ -13,6 +13,7 @@ import DialogProfile from './project-apps/Modal/DialogProfile'
 import RenderList from './project-apps/Accordion/RenderList'
 import RenderTab from './project-apps/Accordion/RenderTab'
 import Pagination from './project-apps/Pagination/Pagination'
+import FullPagination from './project-apps/Pagination/FullPagination'
 
 function App() {
 
@@ -32,7 +33,8 @@ function App() {
       {/*<DialogProfile />*/}
       {/*<RenderList />*/}
       {/*<RenderTab />*/}
-      <Pagination />
+      {/*<Pagination />*/}
+      <FullPagination />
     </div>
   )
 }
