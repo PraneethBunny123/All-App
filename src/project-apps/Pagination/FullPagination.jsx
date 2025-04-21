@@ -12,7 +12,6 @@ export default function FullPagination() {
     const endIndex = startIndex + itemsPerPage
 
     const pages = Array.from({length: totalPages}, (_, i) => i+1)
-    console.log(pages)
 
     function handlePrevButton(){
         setCurrentPage(prev => prev-1)
@@ -51,7 +50,7 @@ export default function FullPagination() {
                 ))}
             </ul>
             <button disabled={currentPage===1} onClick={handlePrevButton}>prev</button>
-            {pages.map(page => <button key={page}>{page}</button>)}
+            {pages.map(page => <button key={page} onClick={() => setCurrentPage(page)}>{page}</button>)}
             <button disabled={currentPage===totalPages} onClick={handleNextButton}>next</button>
         </div>
     )
