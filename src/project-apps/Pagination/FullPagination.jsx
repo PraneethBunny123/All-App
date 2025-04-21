@@ -26,13 +26,13 @@ export default function FullPagination() {
                     <li key={data.id}>{data.name}</li>
                 ))}
             </ul>
-            <button onClick={handlePrevButton}>prev</button>
+            <button disabled={currentPage===1} onClick={handlePrevButton}>prev</button>
             <button>{currentPage}</button>
             <button>{currentPage+1}</button>
             <button>{currentPage+2}</button>
             <button>{currentPage+3}</button>
             <button>{currentPage+4}</button>
-            <button onClick={handleNextButton}>next</button>
+            <button disabled={currentPage===totalPages} onClick={handleNextButton}>next</button>
         </div>
     )
 }
