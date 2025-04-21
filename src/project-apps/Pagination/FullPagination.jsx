@@ -13,6 +13,9 @@ export default function FullPagination() {
 
     const pages = Array.from({length: totalPages}, (_, i) => i+1)
 
+    const startPage = Math.floor((currentPage-1)/pageNumbersPerPage) * pageNumbersPerPage
+    const endPage = startPage + pageNumbersPerPage
+
     function handlePrevButton(){
         setCurrentPage(prev => prev-1)
     }
@@ -21,37 +24,39 @@ export default function FullPagination() {
         setCurrentPage(prev => prev+1)
     }
 
-    function handleButtonOne() {
-        setCurrentPage(1)
-    }
-
-    function handleButtonTwo() {
-        setCurrentPage(2)
-    }
-
-    function handleButtonThree() {
-        setCurrentPage(3)
-    }
-
-    function handleButtonFour() {
-        setCurrentPage(4)
-    }    
-
-    function handleButtonFive() {
-        setCurrentPage(5)
-    }
-
     return (
-        <div>
-            <h1>Page: {currentPage}</h1>
-            <ul>
+        <div className="max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-md">
+            <h1 className="text-2xl font-semibold mb-4 text-center">Page: {currentPage}</h1>
+            <ul className="space-y-2 mb-6">
                 {LARGE_DATA.slice(startIndex, endIndex).map(data => (
-                    <li key={data.id}>{data.name}</li>
+                    <li key={data.id} className="p-3 bg-gray-100 rounded shadow-sm">{data.name}</li>
                 ))}
             </ul>
-            <button disabled={currentPage===1} onClick={handlePrevButton}>prev</button>
-            {pages.map(page => <button key={page} onClick={() => setCurrentPage(page)}>{page}</button>)}
-            <button disabled={currentPage===totalPages} onClick={handleNextButton}>next</button>
+            <div className="flex justify-center items-center gap-2 flex-wrap">
+                <button 
+                    disabled={currentPage===1} 
+                    onClick={handlePrevButton}
+                    className={`px-3 py-1 rounded border ${currentPage === 1 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-white hover:bg-gray-100'}`}
+                >   
+                    prev
+                </button>
+                {pages.slice(startPage, endPage).map(page => 
+                    <button 
+                        key={page} 
+                        onClick={() => setCurrentPage(page)}
+                        className={`px-3 py-1 rounded border ${page === currentPage ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-100'}`}
+                    >
+                        {page}
+                    </button>
+                )}
+                <button 
+                    disabled={currentPage===totalPages} 
+                    onClick={handleNextButton}
+                    className={`px-3 py-1 rounded border ${currentPage === totalPages ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-white hover:bg-gray-100'}`}
+                >
+                    next
+                </button>
+            </div>
         </div>
     )
 }
