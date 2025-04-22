@@ -8,20 +8,28 @@ export default function ToggleDetails() {
         if(currentId.includes(id))
             setCurrentId(prevState => prevState.filter(arrayId => arrayId !== id))
         else
-            setCurrentId(prevStata => [...prevStata, id])
+            setCurrentId(prevState => [...prevState, id])
     }
     
-    console.log(currentId)
 
     return (
-        <div>
-        <ul>
+        <div className="max-w-xl mx-auto mt-8 p-4 border rounded-lg shadow-sm bg-white">
+        <ul className="space-y-4">
             {TOGGLE_DATA.map(data => (
-                <div key={data.id}>
-                    <li >{data.item}</li>
-                    <button onClick={() => handleClick(data.id)}>{currentId.includes(data.id) ?  'Hide Details' : 'Show Details'}</button>
-                    <p>{(currentId.includes(data.id)) && data.description}</p>
-                </div>
+                <li key={data.id} className="p-4 border rounded-md shadow-sm bg-gray-50">
+                    <div className="flex items-center justify-between mb-2">
+                    <span className="font-semibold text-lg">{data.item}</span>
+                    <button 
+                        onClick={() => handleClick(data.id)}
+                        className="text-blue-600 hover:text-blue-800 font-medium"
+                    >
+                        {currentId.includes(data.id) ?  'Hide Details' : 'Show Details'}
+                    </button>
+                    {currentId.includes(data.id) && (
+                        <p className="text-gray-700 text-sm">{data.description}</p>
+                    )}
+                    </div>
+                </li>
             ))}
         </ul>
         </div>
