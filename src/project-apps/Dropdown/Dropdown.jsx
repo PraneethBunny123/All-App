@@ -8,16 +8,23 @@ export default function Dropdown() {
         setSelectedCountry(e.target.value)
     }
 
-
     return (
-        <div>
-            <select value={selectedCountry} onChange={handleOnChange} >
-                <option value='' disabled>-- Select Country--</option>
+        <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md space-y-4">
+            <select 
+                value={selectedCountry} 
+                onChange={handleOnChange}
+                className="w-full border border-gray-300 rounded-md p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+                <option value='' disabled>-- Select Country --</option>
                 {COUNTRIES.map(country => (
-                    <option key={country} value={country}>{country}</option>
+                    <option key={country} value={country}>
+                        {country}
+                    </option>
                 ))}  
             </select>
-            <p>selected country: {selectedCountry}</p>
+            <p className="text-gray-700 text-sm">
+                Selected Country: <span className="font-semibold">{selectedCountry || 'None'}</span>
+            </p>
         </div>
     )
 }
