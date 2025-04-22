@@ -18,7 +18,7 @@ export default function ToggleDetails() {
                 <div key={data.id}>
                     <li >{data.item}</li>
                     <button onClick={() => handleClick(data.id)}>Show details</button>
-                    <p></p>
+                    <p>{data.id === currentId && data.description}</p>
                 </div>
             ))}
         </ul>
