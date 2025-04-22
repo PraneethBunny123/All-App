@@ -5,7 +5,10 @@ export default function ToggleDetails() {
         <div>
         <ul>
             {TOGGLE_DATA.map(data => (
-                <li key={data.item}>{data.item}</li>
+                <div key={data.id}>
+                    <li >{data.item}</li>
+                    <button>Show details</button>
+                </div>
             ))}
         </ul>
         </div>
