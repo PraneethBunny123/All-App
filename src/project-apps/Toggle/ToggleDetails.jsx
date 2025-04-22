@@ -19,7 +19,7 @@ export default function ToggleDetails() {
             {TOGGLE_DATA.map(data => (
                 <div key={data.id}>
                     <li >{data.item}</li>
-                    <button onClick={() => handleClick(data.id)}>Show details</button>
+                    <button onClick={() => handleClick(data.id)}>{currentId.includes(data.id) ?  'Hide Details' : 'Show Details'}</button>
                     <p>{(currentId.includes(data.id)) && data.description}</p>
                 </div>
             ))}
