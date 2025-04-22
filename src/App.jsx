@@ -14,6 +14,7 @@ import RenderList from './project-apps/Accordion/RenderList'
 import RenderTab from './project-apps/Accordion/RenderTab'
 import Pagination from './project-apps/Pagination/Pagination'
 import FullPagination from './project-apps/Pagination/FullPagination'
+import ToggleDetails from './project-apps/Toggle/ToggleDetails'
 
 function App() {
 
@@ -34,7 +35,8 @@ function App() {
       {/*<RenderList />*/}
       {/*<RenderTab />*/}
       {/*<Pagination />*/}
-      <FullPagination />
+      {/*<FullPagination />*/}
+      <ToggleDetails />
     </div>
   )
 }
