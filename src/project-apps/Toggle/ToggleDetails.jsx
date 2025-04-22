@@ -2,15 +2,17 @@ import { useState } from 'react'
 import TOGGLE_DATA from './ToggleData'
 
 export default function ToggleDetails() {
-    const [currentId, setCurrentId] = useState(null)
+    const [currentId, setCurrentId] = useState([])
 
     function handleClick(id) {
-        if(currentId)
-            setCurrentId(null)
+        if(currentId.includes(id))
+            setCurrentId(prevState => prevState.filter(arrayId => arrayId !== id))
         else
-            setCurrentId(id)
+            setCurrentId(prevStata => [...prevStata, id])
     }
     
+    console.log(currentId)
+
     return (
         <div>
         <ul>
@@ -18,7 +20,7 @@ export default function ToggleDetails() {
                 <div key={data.id}>
                     <li >{data.item}</li>
                     <button onClick={() => handleClick(data.id)}>Show details</button>
-                    <p>{data.id === currentId && data.description}</p>
+                    <p>{(currentId.includes(data.id)) && data.description}</p>
                 </div>
             ))}
         </ul>
