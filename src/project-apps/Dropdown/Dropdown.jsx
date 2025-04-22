@@ -8,15 +8,16 @@ export default function Dropdown() {
         setSelectedCountry(e.target.value)
     }
 
-    console.log(selectedCountry)
 
     return (
         <div>
-            <select value={selectedCountry} onChange={handleOnChange}>
+            <select value={selectedCountry} onChange={handleOnChange} >
+                <option value='' disabled>-- Select Country--</option>
                 {COUNTRIES.map(country => (
-                    <option key={country}>{country}</option>
+                    <option key={country} value={country}>{country}</option>
                 ))}  
             </select>
+            <p>selected country: {selectedCountry}</p>
         </div>
     )
 }
