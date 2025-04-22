@@ -3,6 +3,13 @@ import TOGGLE_DATA from './ToggleData'
 
 export default function ToggleDetails() {
     const [currentId, setCurrentId] = useState(null)
+
+    function handleClick(id) {
+        if(currentId)
+            setCurrentId(null)
+        else
+            setCurrentId(id)
+    }
     
     return (
         <div>
@@ -10,7 +17,7 @@ export default function ToggleDetails() {
             {TOGGLE_DATA.map(data => (
                 <div key={data.id}>
                     <li >{data.item}</li>
-                    <button onClick={() => setCurrentId(data.id)}>Show details</button>
+                    <button onClick={() => handleClick(data.id)}>Show details</button>
                     <p></p>
                 </div>
             ))}
