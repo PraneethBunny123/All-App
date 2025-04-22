@@ -15,6 +15,7 @@ import RenderTab from './project-apps/Accordion/RenderTab'
 import Pagination from './project-apps/Pagination/Pagination'
 import FullPagination from './project-apps/Pagination/FullPagination'
 import ToggleDetails from './project-apps/Toggle/ToggleDetails'
+import Dropdown from './project-apps/Dropdown/Dropdown'
 
 function App() {
 
@@ -36,7 +37,8 @@ function App() {
       {/*<RenderTab />*/}
       {/*<Pagination />*/}
       {/*<FullPagination />*/}
-      <ToggleDetails />
+      {/*<ToggleDetails />*/}
+      <Dropdown />
     </div>
   )
 }
