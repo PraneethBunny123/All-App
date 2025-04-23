@@ -23,15 +23,22 @@ export default function CustomDropdown() {
                 {selectedValue === '' ? '--Select Country--' : selectedValue}
             </button>
             {isOpen && 
-                <ul>
+                <ul className="absolute w-full bg-white border border-gray-300 rounded-md mt-1 shadow-lg z-10">
                     {COUNTRIES.map(country => (
                         <li key={country}>
-                            <button onClick={() => handleSelectValue(country)}>{country}</button>
+                            <button 
+                                onClick={() => handleSelectValue(country)}
+                                className="w-full text-left px-4 py-2 hover:bg-blue-100"
+                            >
+                                {country}
+                            </button>
                         </li>
                     ))}
                 </ul>
             }
-            <p>Selected Country: {(!isOpen && selectedValue !== 'select country') ? selectedValue : 'None'}</p>
+            <p className="mt-4 text-gray-700 font-medium">
+                Selected Country: {(!isOpen && selectedValue !== '') ? selectedValue : 'None'}
+            </p>
         </div>
     )
 }
