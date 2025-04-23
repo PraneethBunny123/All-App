@@ -17,8 +17,6 @@ export default function CustomDropdown() {
         setIsOpen(false)
     }
 
-    console.log(selectedValue)
-
     return (
         <div>
             <button onClick={handleDropdown}>--{selectedValue}--</button>
@@ -31,6 +29,7 @@ export default function CustomDropdown() {
                     ))}
                 </ul>
             }
+            <p>Selected Country: {(!isOpen && selectedValue !== 'select country') ? selectedValue : 'None'}</p>
         </div>
     )
 }
