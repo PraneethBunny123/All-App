@@ -2,14 +2,11 @@ import { useState } from "react"
 import COUNTRIES from "./countries"
 
 export default function CustomDropdown() {
-    const [selectedValue, setSelectedValue] = useState('select country')
+    const [selectedValue, setSelectedValue] = useState('')
     const [isOpen, setIsOpen] = useState(false)
 
     function handleDropdown() {
-        if(isOpen)
-            setIsOpen(false)
-        else
-            setIsOpen(true)
+        setIsOpen(prevState => !prevState)
     }
 
     function handleSelectValue(country) {
@@ -18,8 +15,13 @@ export default function CustomDropdown() {
     }
 
     return (
-        <div>
-            <button onClick={handleDropdown}>--{selectedValue}--</button>
+        <div className="relative w-64 mx-auto mt-10">
+            <button 
+                onClick={handleDropdown}
+                className="w-full bg-white border border-gray-300 rounded-md px-4 py-2 text-left shadow-sm hover:bg-gray-50"
+            >
+                {selectedValue === '' ? '--Select Country--' : selectedValue}
+            </button>
             {isOpen && 
                 <ul>
                     {COUNTRIES.map(country => (
