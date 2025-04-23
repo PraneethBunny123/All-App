@@ -16,6 +16,7 @@ import Pagination from './project-apps/Pagination/Pagination'
 import FullPagination from './project-apps/Pagination/FullPagination'
 import ToggleDetails from './project-apps/Toggle/ToggleDetails'
 import Dropdown from './project-apps/Dropdown/Dropdown'
+import CustomDropdown from './project-apps/Dropdown/CustomDropdown'
 
 function App() {
 
@@ -38,7 +39,8 @@ function App() {
       {/*<Pagination />*/}
       {/*<FullPagination />*/}
       {/*<ToggleDetails />*/}
-      <Dropdown />
+      {/*<Dropdown />*/}
+      <CustomDropdown />
     </div>
   )
 }
