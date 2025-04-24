@@ -19,10 +19,9 @@ export default function MultiSelectDropdown() {
                 {COUNTRIES.map(country => (
                     <option key={country}>{country}</option>
                 ))} 
-                <option>hello 3</option>
             </select>
             <div>
-                <button onClick={() => setShowSelected(true)}>Show Selected</button>
+                <button disabled={selectedCountries.length === 0} onClick={() => setShowSelected(true)}>Show Selected</button>
                 <button onClick={() => {setShowSelected(false); setSelectedCountries([])}}>Clear</button>
             </div>
             {showSelected &&
