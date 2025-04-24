@@ -18,6 +18,7 @@ import ToggleDetails from './project-apps/Toggle/ToggleDetails'
 import Dropdown from './project-apps/Dropdown/Dropdown'
 import CustomDropdown from './project-apps/Dropdown/CustomDropdown'
 import MultiSelectDropdown from './project-apps/Dropdown/MultiSelectDropdown'
+import SearchableDropdown from './project-apps/Dropdown/SearchableDropdown'
 
 function App() {
 
@@ -42,7 +43,8 @@ function App() {
       {/*<ToggleDetails />*/}
       {/*<Dropdown />*/}
       {/*<CustomDropdown />*/}
-      <MultiSelectDropdown />
+      {/*<MultiSelectDropdown />*/}
+      <SearchableDropdown />
     </div>
   )
 }
