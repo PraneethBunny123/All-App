@@ -8,7 +8,7 @@ export default function MultiSelectDropdown() {
 
     function handleSelectOption(e) {
         const newArray = Array.from(e.target.selectedOptions).map(option => option.value)
-        setSelectedCountries()
+        setSelectedCountries(prevState => [...new Set([...prevState, ...newArray])])
     }
 
     
