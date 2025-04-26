@@ -9,8 +9,13 @@ export default function SearchableDropdown() {
         setSearch(e.target.value)
     }
 
+    function handleSelectCountry(country) {
+        setSelectedCountry(prevState => [...prevState, country])
+    }
+
+    console.log(selectedCountry)
+
     const filteredCountries = COUNTRIES.filter(country => country.toLowerCase().includes(search.toLowerCase()))
-    console.log(filteredCountries)
 
     return (
         <div>
@@ -20,7 +25,7 @@ export default function SearchableDropdown() {
             <ul>
                 {filteredCountries.map(country => (
                     <li key={country}>
-                        {country}
+                        <button onClick={() => handleSelectCountry(country)}>{country}</button>
                     </li>
                 ))}
             </ul>
