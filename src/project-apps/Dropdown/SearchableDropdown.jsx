@@ -11,9 +11,10 @@ export default function SearchableDropdown() {
     }
 
     function handleSelectCountry(country) {
-        setSelectedCountry(prevState => [... new Set([...prevState, country])])
+        setSelectedCountry(prevState => [...prevState, country])
         setSearch('')
     }
+    console.log(selectedCountry)
 
     const filteredCountries = COUNTRIES.filter(country => country.toLowerCase().includes(search.toLowerCase()))
 
@@ -25,7 +26,7 @@ export default function SearchableDropdown() {
             <ul>
                 {filteredCountries.map(country => (
                     <li key={country}>
-                        <button onClick={() => handleSelectCountry(country)}>{country}</button>
+                        <button disabled={selectedCountry.includes(country)} onClick={() => handleSelectCountry(country)}>{country}</button>
                     </li>
                 ))}
             </ul>
