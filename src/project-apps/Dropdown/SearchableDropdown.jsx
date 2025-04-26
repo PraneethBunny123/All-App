@@ -6,21 +6,21 @@ export default function SearchableDropdown() {
     const [selectedCountry, setSelectedCountry] = useState([])
 
     function handleSearch(e) {
+        e.preventDefault()
         setSearch(e.target.value)
     }
 
     function handleSelectCountry(country) {
         setSelectedCountry(prevState => [... new Set([...prevState, country])])
+        setSearch('')
     }
-
-    console.log(selectedCountry)
 
     const filteredCountries = COUNTRIES.filter(country => country.toLowerCase().includes(search.toLowerCase()))
 
     return (
         <div>
             <label>Searchable Dropdown</label>
-            <input placeholder="search" type="text" onChange={handleSearch}/>
+            <input value={search} placeholder="search" type="text" onChange={handleSearch}/>
             {
             <ul>
                 {filteredCountries.map(country => (
@@ -30,6 +30,14 @@ export default function SearchableDropdown() {
                 ))}
             </ul>
             }
+            <div>
+                <label>Selected Countries</label>
+                <ul>
+                    {selectedCountry.map(country => (
+                        <li key={country}>{country}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }
