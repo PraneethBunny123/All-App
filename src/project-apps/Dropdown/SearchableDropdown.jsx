@@ -15,7 +15,7 @@ export default function SearchableDropdown() {
 
     function handleSelectCountry(country) {
         setSelectedCountry(prevState => [...prevState, country])
-        setSearch('')
+        //setSearch('')
     }
     
     function handleClickOutside(e) {
@@ -65,7 +65,7 @@ export default function SearchableDropdown() {
             </div>
             <div>
                 <label className="block text-gray-700 font-semibold mt-6 mb-2">Selected Countries</label>
-                <ul>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
                     {selectedCountry.map(country => (
                         <li key={country}>{country}</li>
                     ))}
