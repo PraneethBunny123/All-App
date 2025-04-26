@@ -14,7 +14,7 @@ export default function SearchableDropdown() {
     }
 
     function handleSelectCountry(country) {
-        setSelectedCountry(prevState => [...prevState, country])
+        setSelectedCountry(prevState => [...new Set([...prevState, country])])
         //setSearch('')
     }
     
