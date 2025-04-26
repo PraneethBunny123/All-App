@@ -36,22 +36,35 @@ export default function SearchableDropdown() {
     const filteredCountries = COUNTRIES.filter(country => country.toLowerCase().includes(search.toLowerCase()))
 
     return (
-        <div>
-            <label>Searchable Dropdown</label>
+        <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg space-y-6">
+            <label className="block text-gray-700 font-semibold mb-2">Searchable Dropdown</label>
             <div ref={dropdownRef}>
-                <input onFocus={() => setIsDropdownOpen(true)} value={search} placeholder="search" type="text" onChange={handleSearch}/>
+                <input 
+                    onFocus={() => setIsDropdownOpen(true)} 
+                    value={search} 
+                    placeholder="search" 
+                    type="text" 
+                    onChange={handleSearch}
+                    className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
                 {isDropdownOpen &&
-                <ul>
+                <ul className="mt-2 border border-gray-300 rounded-lg max-h-60 overflow-y-auto bg-white shadow-md">
                     {filteredCountries.map(country => (
                         <li key={country}>
-                            <button disabled={selectedCountry.includes(country)} onClick={() => handleSelectCountry(country)}>{country}</button>
+                            <button 
+                                disabled={selectedCountry.includes(country)} 
+                                onClick={() => handleSelectCountry(country)}
+                                className="w-full text-left px-4 py-2 hover:bg-blue-100 disabled:opacity-50"
+                            >
+                                {country}
+                            </button>
                         </li>
                     ))}
                 </ul>
                 }
             </div>
             <div>
-                <label>Selected Countries</label>
+                <label className="block text-gray-700 font-semibold mt-6 mb-2">Selected Countries</label>
                 <ul>
                     {selectedCountry.map(country => (
                         <li key={country}>{country}</li>
