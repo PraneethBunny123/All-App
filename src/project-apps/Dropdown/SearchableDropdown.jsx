@@ -3,22 +3,25 @@ import COUNTRIES from "./countries"
 
 export default function SearchableDropdown() {
     const [search, setSearch] = useState('')
-    const [selectedCountry, setSelectedCountry] = useState('')
-    const [isActive, setIsActive] = useState(false)
+    const [selectedCountry, setSelectedCountry] = useState([])
 
     function handleSearch(e) {
         setSearch(e.target.value)
     }
 
+    const filteredCountries = COUNTRIES.filter(country => country.toLowerCase().includes(search.toLowerCase()))
+    console.log(filteredCountries)
+
     return (
         <div>
             <label>Searchable Dropdown</label>
             <input placeholder="search" type="text" onChange={handleSearch}/>
-            <p>{search}</p>
             {
             <ul>
-                {COUNTRIES.map(country => (
-                    <li key={country}>{country}</li>
+                {filteredCountries.map(country => (
+                    <li key={country}>
+                        {country}
+                    </li>
                 ))}
             </ul>
             }
