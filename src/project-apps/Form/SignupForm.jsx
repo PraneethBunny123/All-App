@@ -10,7 +10,6 @@ export default function SignupForm() {
     
     function handleSubmit(e) {
         e.preventDefault()
-        setErrors({})
         const newErrors = {}
 
         if(name.trim().length < 1) {
@@ -37,8 +36,9 @@ export default function SignupForm() {
 
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="flex justify-center items-center min-h-screen bg-gray-100">
+            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md w-80">
+                <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
                 <input value={name} type="text" onChange={(e) => setName(e.target.value)}/>
                 <input value={email} type="email" onChange={(e) => setEmail(e.target.value)}/>
                 <input value={password} type="password" onChange={(e) => setPassword(e.target.value)}/>
