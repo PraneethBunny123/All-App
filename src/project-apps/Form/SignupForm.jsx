@@ -7,35 +7,41 @@ export default function SignupForm() {
 
     const [errors, setErrors] = useState({})
 
-    const nameError = 'please enter a valid name'
-    const emailError = 'please enter a valid email'
-    const passwordError = 'please enter a valid password'
     
-    function handleSubmit() {
+    function handleSubmit(e) {
+        e.preventDefault()
+        
+        const newErrors = {}
+
         if(name.trim().length < 1) {
-            setErrors(prevState => ({...prevState, nameError}))
+            newErrors.nameError = 'please enter a valid name'
         }
 
         if(!email.trim().includes('@') || email.trim().length < 6) {
-            setErrors(prevState => ({...prevState, emailError }))
+            newErrors.emailError = 'please enter a valid email'
         }
 
         if(password.trim().length < 1) {
-            setErrors(prevState => ({...prevState, passwordError}))
+            newErrors.passwordError = 'please enter a valid password'
         }
+
+        setErrors(newErrors)
     }
 
+    console.log(errors)
     
 
 
     return (
         <div>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <input value={name} type="text" onChange={(e) => setName(e.target.value)}/>
                 <input value={email} type="text" onChange={(e) => setEmail(e.target.value)}/>
                 <input value={password} type="text" onChange={(e) => setPassword(e.target.value)}/>
                 <div>
                     {errors.nameError &&  <p>{errors.nameError}</p>}
+                    {errors.emailError &&  <p>{errors.emailError}</p>}
+                    {errors.passwordError &&  <p>{errors.passwordError}</p>}
                 </div>
                 <button>Submit</button>
             </form>
