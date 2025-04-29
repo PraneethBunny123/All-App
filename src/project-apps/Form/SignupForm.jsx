@@ -10,7 +10,7 @@ export default function SignupForm() {
     
     function handleSubmit(e) {
         e.preventDefault()
-        
+        setErrors({})
         const newErrors = {}
 
         if(name.trim().length < 1) {
@@ -26,10 +26,14 @@ export default function SignupForm() {
         }
 
         setErrors(newErrors)
-    }
-
-    console.log(errors)
-    
+        
+        
+        if(Object.keys(newErrors).length === 0) {
+            setName('')
+            setEmail('')
+            setPassword('')
+        }
+    }    
 
 
     return (
