@@ -40,8 +40,8 @@ export default function SignupForm() {
         <div>
             <form onSubmit={handleSubmit}>
                 <input value={name} type="text" onChange={(e) => setName(e.target.value)}/>
-                <input value={email} type="text" onChange={(e) => setEmail(e.target.value)}/>
-                <input value={password} type="text" onChange={(e) => setPassword(e.target.value)}/>
+                <input value={email} type="email" onChange={(e) => setEmail(e.target.value)}/>
+                <input value={password} type="password" onChange={(e) => setPassword(e.target.value)}/>
                 <div>
                     {errors.nameError &&  <p>{errors.nameError}</p>}
                     {errors.emailError &&  <p>{errors.emailError}</p>}
