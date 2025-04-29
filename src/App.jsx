@@ -19,6 +19,7 @@ import Dropdown from './project-apps/Dropdown/Dropdown'
 import CustomDropdown from './project-apps/Dropdown/CustomDropdown'
 import MultiSelectDropdown from './project-apps/Dropdown/MultiSelectDropdown'
 import SearchableDropdown from './project-apps/Dropdown/SearchableDropdown'
+import SignupForm from './project-apps/Form/SignupForm'
 
 function App() {
 
@@ -44,7 +45,8 @@ function App() {
       {/*<Dropdown />*/}
       {/*<CustomDropdown />*/}
       {/*<MultiSelectDropdown />*/}
-      <SearchableDropdown />
+      {/*<SearchableDropdown />*/}
+      <SignupForm />
     </div>
   )
 }
