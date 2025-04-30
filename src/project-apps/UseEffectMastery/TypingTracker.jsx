@@ -9,16 +9,20 @@ const TypingTracker = () => {
     }, [textTyped])
 
     useEffect(() => {
-        const count = localStorage.getItem('textCount')
+        const savedText = localStorage.getItem('textCount') || ''
 
-        if(count) {
-            setCharCount(count)
-        }
-    }, [textTyped])
+        setTextTyped(savedCount)
+    }, [])
+
+    function handleOnChange(e) {
+        const newText = e.target.value
+        setTextTyped(newText)
+        setCharCount(newText.trim().length)
+    } 
 
     return (
         <div>
-            <textarea value={textTyped} typeof='text' placeholder='enter some text...' onChange={(e) => setTextTyped(e.target.value)}/>
+            <textarea value={textTyped} typeof='text' placeholder='enter some text...' onChange={handleOnChange}/>
             <p>Characters typed: {charCount}</p>
         </div>
     )
