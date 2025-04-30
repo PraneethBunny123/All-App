@@ -20,6 +20,7 @@ import CustomDropdown from './project-apps/Dropdown/CustomDropdown'
 import MultiSelectDropdown from './project-apps/Dropdown/MultiSelectDropdown'
 import SearchableDropdown from './project-apps/Dropdown/SearchableDropdown'
 import SignupForm from './project-apps/Form/SignupForm'
+import TypingTracker from './project-apps/UseEffectMastery/TypingTracker'
 
 function App() {
 
@@ -46,7 +47,8 @@ function App() {
       {/*<CustomDropdown />*/}
       {/*<MultiSelectDropdown />*/}
       {/*<SearchableDropdown />*/}
-      <SignupForm />
+      {/*<SignupForm />*/}
+      <TypingTracker />
     </div>
   )
 }
