@@ -14,12 +14,12 @@ const TypingTracker = () => {
         if(count) {
             setCharCount(count)
         }
-    }, [])
+    }, [textTyped])
 
     return (
         <div>
             <textarea value={textTyped} typeof='text' placeholder='enter some text...' onChange={(e) => setTextTyped(e.target.value)}/>
-            <p>Characters typed: {textTyped.trim().length}</p>
+            <p>Characters typed: {charCount}</p>
         </div>
     )
 }
