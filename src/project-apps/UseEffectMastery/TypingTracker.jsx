@@ -2,18 +2,15 @@ import React, { useEffect, useState } from 'react'
 
 const TypingTracker = () => {
     const [textTyped, setTextTyped] = useState(() => localStorage.getItem('textTyped') || '')
-    const [charCount, setCharCount] = useState(() => parseInt(localStorage.getItem('textCount')) || 0)
-
+    
     useEffect(() => {
-        localStorage.setItem('textCount', charCount)
         localStorage.setItem('textTyped', textTyped)
-    }, [textTyped, charCount])
+    }, [textTyped])
 
 
     function handleOnChange(e) {
         const newText = e.target.value
         setTextTyped(newText)
-        setCharCount(newText.trim().length)
     } 
 
     return (
@@ -26,7 +23,7 @@ const TypingTracker = () => {
                     onChange={handleOnChange}
                     className="w-full h-40 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                <p className="mt-3 text-gray-600">Characters typed: <span className="font-semibold">{charCount}</span></p>
+                <p className="mt-3 text-gray-600">Characters typed: <span className="font-semibold">{textTyped.trim().length}</span></p>
             </div>
         </div>
     )
