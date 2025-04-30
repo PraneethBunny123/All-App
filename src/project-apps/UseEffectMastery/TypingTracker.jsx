@@ -5,7 +5,8 @@ const TypingTracker = () => {
     const [charCount, setCharCount] = useState(0)
 
     useEffect(() => {
-        localStorage.setItem('textCount', textTyped.trim().length)
+        localStorage.setItem('textCount', charCount)
+        localStorage.setItem('textTyped', textTyped)
     }, [textTyped])
 
     useEffect(() => {
