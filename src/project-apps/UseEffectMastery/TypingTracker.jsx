@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const TypingTracker = () => {
+    const [textTyped, setTextTyped] = useState('')
+
+    console.log(textTyped, textTyped.length)
+
     return (
         <div>
-            Hello
+            <textarea value={textTyped} typeof='text' onChange={(e) => setTextTyped(e.target.value)}/>
+            <button></button>
         </div>
     )
 }
