@@ -10,9 +10,10 @@ const TypingTracker = () => {
     }, [textTyped])
 
     useEffect(() => {
-        const savedText = localStorage.getItem('textCount') || ''
-
+        const savedText = localStorage.getItem('textTyped') || ''
+        const savedCount = localStorage.getItem('textCount') || 0
         setTextTyped(savedCount)
+        setCharCount()
     }, [])
 
     function handleOnChange(e) {
