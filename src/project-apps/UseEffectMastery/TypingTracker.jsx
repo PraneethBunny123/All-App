@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
 const TypingTracker = () => {
-    const [textTyped, setTextTyped] = useState('')
-    const [charCount, setCharCount] = useState(0)
+    const [textTyped, setTextTyped] = useState(() => localStorage.getItem('textTyped') || '')
+    const [charCount, setCharCount] = useState(() => parseInt(localStorage.getItem('textCount')) || 0)
 
     useEffect(() => {
         localStorage.setItem('textCount', charCount)
         localStorage.setItem('textTyped', textTyped)
-    }, [textTyped])
+    }, [textTyped, charCount])
 
-    useEffect(() => {
-        const savedText = localStorage.getItem('textTyped') || ''
-        const savedCount = localStorage.getItem('textCount') || 0
-        setTextTyped(savedCount)
-        setCharCount()
-    }, [])
 
     function handleOnChange(e) {
         const newText = e.target.value
