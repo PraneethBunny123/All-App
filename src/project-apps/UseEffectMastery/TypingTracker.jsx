@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const TypingTracker = () => {
     const [textTyped, setTextTyped] = useState('')
 
-    console.log(textTyped, textTyped.length)
+    useEffect(() => {
+        localStorage.setItem('textCount', textTyped.trim().length)
+    }, [textTyped])
+
+    const newCount = localStorage.getItem('textCount')
+
+    console.log(newCount)
 
     return (
         <div>
