@@ -5,11 +5,16 @@ const InfiniteScroll = () => {
     const [query, setQuery] = useState('')
     const [pageNumber, setPageNumber] = useState(1)
 
+    function handleSearch(e) {
+        setQuery(e.target.value)
+        setPageNumber(1)
+    }
+
     useBookSearch(query, pageNumber)
 
     return (
         <div>
-            <input type='text'></input>
+            <input type='text' onChange={handleSearch}></input>
             <div>title</div>
             <div>title</div>
             <div>Loading...</div>
