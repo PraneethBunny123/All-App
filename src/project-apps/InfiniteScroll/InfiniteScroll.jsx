@@ -23,16 +23,21 @@ const InfiniteScroll = () => {
     }, [isLoading, hasMore])
 
     function handleSearch(e) {
-        setQuery(e.target.value)
+    setQuery(e.target.value)
         setPageNumber(1)
     }
 
 
     return (
-        <div>
-            <label>Infinite Scroll</label>
-            <input type='text' value={query} onChange={handleSearch}></input>
-            <ul>
+        <div className="max-w-md mx-auto mt-8">
+            <label className="block mb-2 font-bold text-lg">Infinite Scroll</label>
+            <input 
+                type='text'
+                value={query}
+                onChange={handleSearch}
+                className="w-full p-2 border rounded mb-4"   
+            />
+            <ul className="space-y-2">
                 {books.map((book, index) => {
                     if(books.length === index+1) {
                         return <li key={book} ref={lastBookRef}>{book}</li>
@@ -41,8 +46,8 @@ const InfiniteScroll = () => {
                     }
                 })}
             </ul>
-            {isLoading && <p>Loading...</p>}
-            {error && <p>Error</p>}
+            {isLoading && <p className="text-blue-500">Loading...</p>}
+            {error && <p className="text-red-500">Error</p>}
         </div>
     )
 }

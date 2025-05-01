@@ -22,7 +22,6 @@ export default function useBookSearch(query, pageNumber) {
             params: {q: query, page: pageNumber},
             cancelToken: new axios.CancelToken(c => cancel = c)
         }).then(res => {
-            console.log(res.data)
             setBooks(prevBooks => [...new Set([...prevBooks, ...res.data.docs.map(
                 book => book.title
             )])])
