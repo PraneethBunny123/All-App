@@ -14,11 +14,15 @@ const InfiniteScroll = () => {
 
     return (
         <div>
+            <label>Infinite Scroll</label>
             <input type='text' onChange={handleSearch}></input>
-            <div>title</div>
-            <div>title</div>
-            <div>Loading...</div>
-            <div>Error</div>
+            <ul>
+                {books.map(book => (
+                    <li key={book}>{book}</li>
+                ))}
+            </ul>
+            {isLoading && <p>Loading...</p>}
+            {error && <p>Error</p>}
         </div>
     )
 }
