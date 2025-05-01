@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 import groceries from "./MOCK_DATA"
 
 export default function NotesApp() {
@@ -21,7 +21,6 @@ export default function NotesApp() {
         const filteredNotes = notes.filter(note => note.id !== id)
         setNotes(filteredNotes)
     }
-
 
 
     return (
