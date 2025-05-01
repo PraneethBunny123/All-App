@@ -22,6 +22,7 @@ import SearchableDropdown from './project-apps/Dropdown/SearchableDropdown'
 import SignupForm from './project-apps/Form/SignupForm'
 import TypingTracker from './project-apps/UseEffectMastery/TypingTracker'
 import InfiniteScroll from './project-apps/InfiniteScroll/InfiniteScroll'
+import NotesApp from './project-apps/Notes App/NotesApp'
 
 function App() {
 
@@ -50,7 +51,8 @@ function App() {
       {/*<SearchableDropdown />*/}
       {/*<SignupForm />*/}
       {/*<TypingTracker />*/}
-      <InfiniteScroll />
+      {/*<InfiniteScroll />*/}
+      <NotesApp />
     </div>
   )
 }

@@ -1,0 +1,22 @@
+const groceries = [{"id":1,"Notes":"Wine - Peller Estates Late"},
+{"id":2,"Notes":"Cookie Choc"},
+{"id":3,"Notes":"Roe - Lump Fish, Black"},
+{"id":4,"Notes":"Pork - Backfat"},
+{"id":5,"Notes":"Garlic - Elephant"},
+{"id":6,"Notes":"Fudge - Cream Fudge"},
+{"id":7,"Notes":"Chocolate - Mi - Amere Semi"},
+{"id":8,"Notes":"Swiss Chard - Red"},
+{"id":9,"Notes":"Zucchini - Yellow"},
+{"id":10,"Notes":"Chicken - Tenderloin"},
+{"id":11,"Notes":"Pastry - Apple Large"},
+{"id":12,"Notes":"Flour - All Purpose"},
+{"id":13,"Notes":"Soup - Cream Of Broccoli"},
+{"id":14,"Notes":"Teriyaki Sauce"},
+{"id":15,"Notes":"Muffin Batt - Blueberry Passion"},
+{"id":16,"Notes":"Beans - Black Bean, Dry"},
+{"id":17,"Notes":"Absolut Citron"},
+{"id":18,"Notes":"Nori Sea Weed - Gold Label"},
+{"id":19,"Notes":"Water - Spring Water, 355 Ml"},
+{"id":20,"Notes":"Veal - Brisket, Provimi, Bone - In"}]
+
+export default groceries
