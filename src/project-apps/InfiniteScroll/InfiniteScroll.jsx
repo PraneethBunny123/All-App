@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import useBookSearch from './useBookSearch'
 
 const InfiniteScroll = () => {
     const [query, setQuery] = useState('')
     const [pageNumber, setPageNumber] = useState(1)
+
+    const lastBookRef = useRef()
 
     function handleSearch(e) {
         setQuery(e.target.value)
@@ -15,11 +17,15 @@ const InfiniteScroll = () => {
     return (
         <div>
             <label>Infinite Scroll</label>
-            <input type='text' onChange={handleSearch}></input>
+            <input type='text' value={query} onChange={handleSearch}></input>
             <ul>
-                {books.map(book => (
-                    <li key={book}>{book}</li>
-                ))}
+                {books.map((book, index) => {
+                    if(books.length === index+1) {
+                        return <li key={book} ref={lastBookRef}>{book}</li>
+                    }else {
+                        return <li key={book}>{book}</li>
+                    }
+                })}
             </ul>
             {isLoading && <p>Loading...</p>}
             {error && <p>Error</p>}
