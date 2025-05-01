@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import useBookSearch from './useBookSearch'
 
 const InfiniteScroll = () => {
     const [query, setQuery] = useState('')
     const [pageNumber, setPageNumber] = useState(1)
 
-    const lastBookRef = useRef()
+    const lastBookRef = useCallback(node => {console.log(node)})
 
     function handleSearch(e) {
         setQuery(e.target.value)
