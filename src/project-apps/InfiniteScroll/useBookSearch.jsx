@@ -1,7 +1,11 @@
 import axios from "axios"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export default function useBookSearch(query, pageNumber) {
+    const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(false)
+    const [books, setBooks] = useState([])
+    const [hasMore, setHasMore] = useState(false)
 
     useEffect(() => {
         let cancel
