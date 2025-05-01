@@ -1,4 +1,4 @@
-
+import groceries from "./MOCK_DATA"
 
 export default function NotesApp() {
     return (
@@ -7,7 +7,9 @@ export default function NotesApp() {
             <button>Add Note</button>
 
             <ul>
-                {}
+                {groceries.map(obj => (
+                    <li key={obj.id}>{obj.Notes}</li>
+                ))}
             </ul>
         </div>
     )
