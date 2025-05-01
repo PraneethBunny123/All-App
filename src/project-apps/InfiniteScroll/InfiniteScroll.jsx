@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import useBookSearch from './useBookSearch'
 
 const InfiniteScroll = () => {
+    const [query, setQuery] = useState('')
+    const [pageNumber, setPageNumber] = useState(1)
+
+    useBookSearch(query, pageNumber)
+
     return (
         <div>
             <input type='text'></input>
