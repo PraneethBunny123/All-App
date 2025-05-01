@@ -10,7 +10,7 @@ const InfiniteScroll = () => {
         setPageNumber(1)
     }
 
-    useBookSearch(query, pageNumber)
+    const {isLoading, error, books, hasMore} = useBookSearch(query, pageNumber)
 
     return (
         <div>
