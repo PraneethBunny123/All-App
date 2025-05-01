@@ -8,6 +8,9 @@ export default function useBookSearch(query, pageNumber) {
     const [hasMore, setHasMore] = useState(false)
 
     useEffect(() => {
+        setIsLoading(false)
+        setError(false)
+
         let cancel
         axios({
             method: 'GET',
@@ -16,16 +19,21 @@ export default function useBookSearch(query, pageNumber) {
             cancelToken: new axios.CancelToken(c => cancel = c)
         }).then(res => {
             console.log(res.data)
+            setBooks(prevBooks => [...new Set([...prevBooks, res.data.docs.map(
+                book => book.title
+            )])])
+
+            setHasMore(res.data.length > 0)
+            setIsLoading(false)
         }).catch(e => {
             if(axios.isCancel(e)) return
+            setError(true)
         })
 
         return () => cancel()
     }, [query, pageNumber])
 
-    return (
-        <div>
-            null
-        </div>
-    )
+    return {
+        isLoading, error, books, hasMore
+    }
 }
