@@ -4,15 +4,29 @@ import useBookSearch from './useBookSearch'
 const InfiniteScroll = () => {
     const [query, setQuery] = useState('')
     const [pageNumber, setPageNumber] = useState(1)
+    const {isLoading, error, books, hasMore} = useBookSearch(query, pageNumber)
 
-    const lastBookRef = useCallback(node => {console.log(node)})
+    const observer = useRef()
+    const lastBookRef = useCallback(node => {
+        if(isLoading) return
+        if(observer.current) {
+            observer.current.disconnect()
+        }
+        observer.current = new IntersectionObserver(entries => {
+            if(entries[0].isIntersecting && hasMore) {
+                setPageNumber(prevPageNumber => prevPageNumber+1)
+            }
+        })
+        if(node) {
+            observer.current.observe(node)
+        }
+    }, [isLoading, hasMore])
 
     function handleSearch(e) {
         setQuery(e.target.value)
         setPageNumber(1)
     }
 
-    const {isLoading, error, books, hasMore} = useBookSearch(query, pageNumber)
 
     return (
         <div>

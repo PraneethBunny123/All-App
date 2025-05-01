@@ -27,7 +27,7 @@ export default function useBookSearch(query, pageNumber) {
                 book => book.title
             )])])
 
-            setHasMore(res.data.length > 0)
+            setHasMore(res.data.docs.length > 0)
             setIsLoading(false)
         }).catch(e => {
             if(axios.isCancel(e)) return
