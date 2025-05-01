@@ -15,7 +15,11 @@ export default function NotesApp() {
             "Notes": textTyped
         }])
         setTextTyped('')
-        
+    }
+
+    function handleRemoveNote(id) {
+        const filteredNotes = notes.filter(note => note.id !== id)
+        setNotes(filteredNotes)
     }
 
 
@@ -27,7 +31,10 @@ export default function NotesApp() {
 
             <ul>
                 {notes.map(obj => (
-                    <li key={obj.id}>{obj.Notes}</li>
+                    <li key={obj.id}>
+                        {obj.Notes} - 
+                        <button onClick={() => handleRemoveNote(obj.id)}>X</button>
+                    </li>
                 ))}
             </ul>
         </div>
