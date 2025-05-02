@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import groceries from "./MOCK_DATA"
 
 export default function NotesApp() {
-    const [notes, setNotes] = useState(() => localStorage.getItem('notes') || groceries)
+    const [notes, setNotes] = useState(() => {
+        const savedNotes = localStorage.getItem('notes') 
+        return savedNotes ? JSON.parse(savedNotes) : groceries
+    })
     const [textTyped, setTextTyped] = useState('')
 
     let filteredNotes = []
@@ -14,8 +17,8 @@ export default function NotesApp() {
     function handleAddNotes() {
         if(textTyped.trim() !== '') {
             setNotes(prevNotes => [...prevNotes, {
-                "id": prevNotes.length + 1,
-                "Notes": textTyped
+                id: prevNotes.length + 1,
+                Notes: textTyped
             }])
             setTextTyped('')
         }
@@ -26,6 +29,9 @@ export default function NotesApp() {
         setNotes(filteredNotes)
     }
 
+    useEffect(() => {
+        localStorage.setItem('notes', JSON.stringify(notes))
+    }, [notes])
 
 
     return (
