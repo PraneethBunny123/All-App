@@ -15,10 +15,19 @@ export default function NotesApp() {
     }
 
     function handleAddNotes() {
+        
+        
         if(textTyped.trim() !== '') {
+            const now = new Date()
+            const timeStamp = now.toLocaleDateString('en-us', {
+                dateStyle: 'medium',
+                timeStyle: 'short'
+            })
+
             setNotes(prevNotes => [...prevNotes, {
                 id: prevNotes.length + 1,
-                Notes: textTyped
+                Notes: textTyped,
+                timeStamp: timeStamp
             }])
             setTextTyped('')
         }
