@@ -53,7 +53,7 @@ export default function NotesApp() {
                 {notes.map(obj => (
                     <li key={obj.id}>
                         {obj.Notes} - <span>{obj.timeStamp}</span>
-                        <button onClick={() => handleRemoveNote(obj.id)}>X</button>
+                        <button onClick={() => handleRemoveNote(obj.id)}>❌</button>
                     </li>
                 ))}
             </ul>
