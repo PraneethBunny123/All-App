@@ -15,14 +15,14 @@ export default function NotesApp() {
     }
 
     function handleAddNotes() {
-        
+        const now = new Date()
+        const timeStamp = now.toLocaleString('en-US', {
+            dateStyle: 'medium',
+            timeStyle: 'short'
+        })
         
         if(textTyped.trim() !== '') {
-            const now = new Date()
-            const timeStamp = now.toLocaleDateString('en-us', {
-                dateStyle: 'medium',
-                timeStyle: 'short'
-            })
+            
 
             setNotes(prevNotes => [...prevNotes, {
                 id: prevNotes.length + 1,
@@ -31,8 +31,9 @@ export default function NotesApp() {
             }])
             setTextTyped('')
         }
+        
     }
-
+    console.log(notes)
     function handleRemoveNote(id) {
         filteredNotes = notes.filter(note => note.id !== id)
         setNotes(filteredNotes)
