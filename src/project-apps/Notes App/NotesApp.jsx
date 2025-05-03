@@ -33,7 +33,7 @@ export default function NotesApp() {
         }
         
     }
-    console.log(notes)
+    
     function handleRemoveNote(id) {
         filteredNotes = notes.filter(note => note.id !== id)
         setNotes(filteredNotes)
@@ -52,7 +52,7 @@ export default function NotesApp() {
             <ul>
                 {notes.map(obj => (
                     <li key={obj.id}>
-                        {obj.Notes} - 
+                        {obj.Notes} - <span>{obj.timeStamp}</span>
                         <button onClick={() => handleRemoveNote(obj.id)}>X</button>
                     </li>
                 ))}
