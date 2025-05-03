@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import groceries from "./MOCK_DATA"
+import NotesListRender from "./NotesListRender"
 
 export default function NotesApp() {
     const [notes, setNotes] = useState(() => {
@@ -7,8 +8,6 @@ export default function NotesApp() {
         return savedNotes ? JSON.parse(savedNotes) : groceries
     })
     const [textTyped, setTextTyped] = useState('')
-
-    let filteredNotes = []
 
     function handleOnChange(e) {
         setTextTyped(e.target.value)
@@ -35,7 +34,7 @@ export default function NotesApp() {
     }
     
     function handleRemoveNote(id) {
-        filteredNotes = notes.filter(note => note.id !== id)
+        const filteredNotes = notes.filter(note => note.id !== id)
         setNotes(filteredNotes)
     }
 
@@ -49,14 +48,7 @@ export default function NotesApp() {
             <input value={textTyped} onChange={handleOnChange} type="text" placeholder="Add Note..."/>
             <button onClick={handleAddNotes}>Add Note</button>
 
-            <ul>
-                {notes.map(obj => (
-                    <li key={obj.id}>
-                        {obj.Notes} - <span>{obj.timeStamp}</span>
-                        <button onClick={() => handleRemoveNote(obj.id)}>❌</button>
-                    </li>
-                ))}
-            </ul>
+            <NotesListRender handleRemoveNote={handleRemoveNote} notes={notes}/>
         </div>
     )
 }
