@@ -3,6 +3,7 @@ import groceries from "./MOCK_DATA"
 import NotesListRender from "./NotesListRender"
 import AddNotes from "./AddNotes"
 import EditingModal from "./EditingModal"
+import SearchNotes from "./SearchNotes"
 
 export default function NotesApp() {
     const [notes, setNotes] = useState(() => {
@@ -31,6 +32,8 @@ export default function NotesApp() {
 
     return (
         <div>
+            <label>Notes App</label>
+            <SearchNotes />
             <AddNotes setNotes={setNotes}/>
             <NotesListRender 
                 notes={notes} 

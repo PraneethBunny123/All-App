@@ -20,6 +20,7 @@ export default function AddNotes({setNotes}) {
             setNotes(prevNotes => [...prevNotes, {
                 id: uuidv4(),
                 Notes: textTyped,
+                timeStamp: timeStamp
             }])
             setTextTyped('')
         }
