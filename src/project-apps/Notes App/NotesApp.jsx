@@ -13,8 +13,6 @@ export default function NotesApp() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [editingNote, setEditingNote] = useState(null)
 
-    console.log(editingNote)
-
     useEffect(() => {
         localStorage.setItem('notes', JSON.stringify(notes))
     }, [notes])

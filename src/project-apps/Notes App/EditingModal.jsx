@@ -1,14 +1,14 @@
 import { useRef } from "react"
 import { createPortal } from "react-dom"
 
-export default function EditingModal({isModalOpen, setisModalOpen, onSave, editingNote}) {
+export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote}) {
     const dialogRef = useRef()
 
     if(isModalOpen)
         dialogRef.current.showModal()
 
     function handleCloseModal() {
-        setisModalOpen(false)
+        setIsModalOpen(false)
     }
 
     console.log(isModalOpen)
