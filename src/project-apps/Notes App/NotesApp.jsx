@@ -17,6 +17,17 @@ export default function NotesApp() {
         localStorage.setItem('notes', JSON.stringify(notes))
     }, [notes])
 
+    function handleSaveEditedNote() {
+        setNotes(prevNotes => (
+            prevNotes.map(note => note.id === editingNote.id
+                ? {...note, Notes: updateText} : note
+            )
+        ))
+
+        setIsModalOpen(false)
+        setEditingNote(null)
+    }
+
 
     return (
         <div>
@@ -30,7 +41,8 @@ export default function NotesApp() {
             <EditingModal 
                 isModalOpen={isModalOpen} 
                 setIsModalOpen={setIsModalOpen}
-                editingNote={editingNote}    
+                editingNote={editingNote}   
+                onSave={handleSaveEditedNote} 
             />
         </div>
     )
