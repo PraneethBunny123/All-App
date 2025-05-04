@@ -9,20 +9,20 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
         if(isModalOpen) dialogRef.current.showModal()
     }, [isModalOpen])
 
-    function handleCloseModal() {
-        setIsModalOpen(false)
-    }
-
-    function handleOnChange(e) {
-        setEditedText(e.target.value)
-    }
-
     useEffect(() => {
         if(editingNote)
             setEditedText(editingNote.Notes)
     }, [editingNote])
 
-    console.log(isModalOpen)
+    function handleOnChange(e) {
+        setEditedText(e.target.value)
+    }
+
+    function handleSave() {
+        if(editedText.trim() !== '') {
+            onSave(editedText)
+        }
+    }
 
     return createPortal(
         <dialog ref={dialogRef}>
