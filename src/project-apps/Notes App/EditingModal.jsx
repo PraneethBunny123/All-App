@@ -22,6 +22,10 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
         setEditedText(e.target.value)
     }
 
+    function handleCloseModal() {
+        setIsModalOpen(false)
+    }
+
     function handleSave() {
         if(editedText.trim() !== '') {
             onSave(editedText)
