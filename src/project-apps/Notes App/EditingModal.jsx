@@ -3,7 +3,7 @@ import { createPortal } from "react-dom"
 
 export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote}) {
     const dialogRef = useRef()
-    const [editedText, setEditedText] = useState(editingNote?.Notes)
+    const [editedText, setEditedText] = useState('')
 
     useEffect(() => {
         if(isModalOpen) dialogRef.current.showModal()
@@ -18,8 +18,9 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
     }
 
     useEffect(() => {
-        setEditedText(editingNote?.Notes)
-    }, [])
+        if(editingNote)
+            setEditedText(editingNote.Notes)
+    }, [editingNote])
 
     console.log(isModalOpen)
 
