@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function NotesListRender({notes, setNotes, setEditingNote}) {
+export default function NotesListRender({notes, setNotes, setEditingNote, setIsModalOpen}) {
 
     function handleRemoveNote(id) {
         const filteredNotes = notes.filter(note => note.id !== id)
@@ -9,6 +9,7 @@ export default function NotesListRender({notes, setNotes, setEditingNote}) {
 
     function handleEditButton(noteObj) {
         setEditingNote(noteObj)
+        setIsModalOpen(true)
     }
 
     return (

@@ -23,8 +23,13 @@ export default function NotesApp() {
     return (
         <div>
             <AddNotes setNotes={setNotes}/>
-            <NotesListRender notes={notes} setNotes={setNotes} setEditingNote={setEditingNote}/>
-            <EditingModal />
+            <NotesListRender 
+                notes={notes} 
+                setNotes={setNotes} 
+                setEditingNote={setEditingNote}
+                setIsModalOpen={setIsModalOpen}    
+            />
+            <EditingModal isOpen={isModalOpen}/>
         </div>
     )
 }
