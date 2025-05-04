@@ -1,4 +1,4 @@
-export default function NotesListRender({notes, setNotes, setEditingNote, setIsModalOpen}) {
+export default function NotesListRender({notes, setNotes, setEditingNote, setIsModalOpen, searchedNotes}) {
 
     function handleRemoveNote(id) {
         const filteredNotes = notes.filter(note => note.id !== id)
@@ -12,7 +12,7 @@ export default function NotesListRender({notes, setNotes, setEditingNote, setIsM
 
     return (
         <ul>
-            {notes.map(obj => {        
+            {searchedNotes.map(obj => {        
                 return (
                     <li key={obj.id}>
                         {obj.Notes} - <span>{obj.timeStamp}</span>

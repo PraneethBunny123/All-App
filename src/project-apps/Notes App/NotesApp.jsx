@@ -44,6 +44,7 @@ export default function NotesApp() {
                 setNotes={setNotes} 
                 setEditingNote={setEditingNote}
                 setIsModalOpen={setIsModalOpen}    
+                searchedNotes={searchedNotes}
             />
             <EditingModal 
                 isModalOpen={isModalOpen} 
