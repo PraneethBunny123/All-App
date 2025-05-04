@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {v4 as uuidv4} from 'uuid'
 
 export default function AddNotes({setNotes}) {
     const [textTyped, setTextTyped] = useState('')
@@ -16,12 +17,9 @@ export default function AddNotes({setNotes}) {
         })
         
         if(textTyped.trim() !== '') {
-            
-
             setNotes(prevNotes => [...prevNotes, {
-                id: prevNotes.length + 1,
+                id: uuidv4(),
                 Notes: textTyped,
-                timeStamp: timeStamp
             }])
             setTextTyped('')
         }

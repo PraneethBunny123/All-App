@@ -9,8 +9,6 @@ export default function NotesApp() {
         return savedNotes ? JSON.parse(savedNotes) : groceries
     })
 
-    console.log(notes)
-
     useEffect(() => {
         localStorage.setItem('notes', JSON.stringify(notes))
     }, [notes])

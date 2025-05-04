@@ -7,9 +7,7 @@ export default function NotesListRender({notes, setNotes}) {
 
     return (
         <ul>
-            {notes.map(obj => {
-                console.log(obj.id)
-        
+            {notes.map(obj => {        
                 return (
                     <li key={obj.id}>
                         {obj.Notes} - <span>{obj.timeStamp}</span>
