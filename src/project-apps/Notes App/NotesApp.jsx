@@ -10,6 +10,11 @@ export default function NotesApp() {
         return savedNotes ? JSON.parse(savedNotes) : groceries
     })
 
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [editingNote, setEditingNote] = useState(null)
+
+    console.log(editingNote)
+
     useEffect(() => {
         localStorage.setItem('notes', JSON.stringify(notes))
     }, [notes])
@@ -18,7 +23,7 @@ export default function NotesApp() {
     return (
         <div>
             <AddNotes setNotes={setNotes}/>
-            <NotesListRender notes={notes} setNotes={setNotes}/>
+            <NotesListRender notes={notes} setNotes={setNotes} setEditingNote={setEditingNote}/>
             <EditingModal />
         </div>
     )
