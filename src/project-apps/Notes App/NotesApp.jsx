@@ -33,7 +33,7 @@ export default function NotesApp() {
     return (
         <div>
             <label>Notes App</label>
-            <SearchNotes />
+            <SearchNotes notes={notes}/>
             <AddNotes setNotes={setNotes}/>
             <NotesListRender 
                 notes={notes} 
