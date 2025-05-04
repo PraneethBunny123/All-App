@@ -1,9 +1,18 @@
+import { useState } from "react"
+
 export default function NotesListRender({notes, setNotes}) {
+    const [editingNoteId, setEditingNoteId] = useState(null)
 
     function handleRemoveNote(id) {
         const filteredNotes = notes.filter(note => note.id !== id)
         setNotes(filteredNotes)
     }
+
+    function handleEditButton(id) {
+        setEditingNoteId(id)
+    }
+
+    console.log(editingNoteId)
 
     return (
         <ul>
@@ -11,7 +20,7 @@ export default function NotesListRender({notes, setNotes}) {
                 return (
                     <li key={obj.id}>
                         {obj.Notes} - <span>{obj.timeStamp}</span>
-                        <button>✏️Edit</button>
+                        <button onClick={() => handleEditButton(obj.id)}>✏️Edit</button>
                         <button onClick={() => handleRemoveNote(obj.id)}>❌</button>
                     </li>
                 )}
