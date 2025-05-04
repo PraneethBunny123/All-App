@@ -6,7 +6,11 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
     const [editedText, setEditedText] = useState('')
 
     useEffect(() => {
-        if(isModalOpen) dialogRef.current.showModal()
+        if(isModalOpen) {
+            dialogRef.current?.showModal()
+        }else {
+            dialogRef.current?.close()
+        }
     }, [isModalOpen])
 
     useEffect(() => {
