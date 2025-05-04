@@ -9,11 +9,7 @@ export default function NotesApp() {
         return savedNotes ? JSON.parse(savedNotes) : groceries
     })
 
-    
-    function handleRemoveNote(id) {
-        const filteredNotes = notes.filter(note => note.id !== id)
-        setNotes(filteredNotes)
-    }
+    console.log(notes)
 
     useEffect(() => {
         localStorage.setItem('notes', JSON.stringify(notes))
@@ -23,7 +19,7 @@ export default function NotesApp() {
     return (
         <div>
             <AddNotes setNotes={setNotes}/>
-            <NotesListRender handleRemoveNote={handleRemoveNote} notes={notes}/>
+            <NotesListRender notes={notes}/>
         </div>
     )
 }

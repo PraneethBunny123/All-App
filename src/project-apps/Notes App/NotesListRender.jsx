@@ -1,5 +1,9 @@
-export default function NotesListRender({notes, handleRemoveNote}) {
+export default function NotesListRender({notes}) {
 
+    function handleRemoveNote(id) {
+        const filteredNotes = notes.filter(note => note.id !== id)
+        setNotes(filteredNotes)
+    }
 
     return (
         <ul>
