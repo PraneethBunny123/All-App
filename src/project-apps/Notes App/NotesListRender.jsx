@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 export default function NotesListRender({notes, setNotes, setEditingNote, setIsModalOpen}) {
 
     function handleRemoveNote(id) {

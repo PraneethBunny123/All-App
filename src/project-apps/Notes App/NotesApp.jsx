@@ -14,6 +14,10 @@ export default function NotesApp() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [editingNote, setEditingNote] = useState(null)
 
+    const [searchNote, setSearchNote] = useState('')
+
+    const searchedNotes = notes.filter(noteObj => noteObj.Notes.toLowerCase().includes(searchNote.toLowerCase()))
+
     useEffect(() => {
         localStorage.setItem('notes', JSON.stringify(notes))
     }, [notes])
@@ -33,7 +37,7 @@ export default function NotesApp() {
     return (
         <div>
             <label>Notes App</label>
-            <SearchNotes notes={notes}/>
+            <SearchNotes searchNote={searchNote} setSearchNote={setSearchNote}/>
             <AddNotes setNotes={setNotes}/>
             <NotesListRender 
                 notes={notes} 
