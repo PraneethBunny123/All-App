@@ -29,7 +29,11 @@ export default function NotesApp() {
                 setEditingNote={setEditingNote}
                 setIsModalOpen={setIsModalOpen}    
             />
-            <EditingModal isOpen={isModalOpen}/>
+            <EditingModal 
+                isModalOpen={isModalOpen} 
+                setIsModalOpen={setIsModalOpen}
+                editingNote={editingNote}    
+            />
         </div>
     )
 }
