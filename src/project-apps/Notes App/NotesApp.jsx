@@ -17,10 +17,10 @@ export default function NotesApp() {
         localStorage.setItem('notes', JSON.stringify(notes))
     }, [notes])
 
-    function handleSaveEditedNote() {
+    function handleSaveEditedNote(updatedText) {
         setNotes(prevNotes => (
             prevNotes.map(note => note.id === editingNote.id
-                ? {...note, Notes: updateText} : note
+                ? {...note, Notes: updatedText} : note
             )
         ))
 

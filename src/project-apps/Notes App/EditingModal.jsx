@@ -28,7 +28,7 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
         <dialog ref={dialogRef}>
             <label>Edit Note</label>
             <input type="text" value={editedText} onChange={handleOnChange}/>
-            <button>Save</button>
+            <button onClick={handleSave}>Save</button>
             <button onClick={handleCloseModal}>Cancel</button>
         </dialog>,
         document.getElementById('modal')
