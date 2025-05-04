@@ -19,7 +19,7 @@ export default function NotesApp() {
     return (
         <div>
             <AddNotes setNotes={setNotes}/>
-            <NotesListRender notes={notes}/>
+            <NotesListRender notes={notes} setNotes={setNotes}/>
         </div>
     )
 }
