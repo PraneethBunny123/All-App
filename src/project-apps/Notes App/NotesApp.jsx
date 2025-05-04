@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import groceries from "./MOCK_DATA"
 import NotesListRender from "./NotesListRender"
 import AddNotes from "./AddNotes"
+import EditingModal from "./EditingModal"
 
 export default function NotesApp() {
     const [notes, setNotes] = useState(() => {
@@ -18,6 +19,7 @@ export default function NotesApp() {
         <div>
             <AddNotes setNotes={setNotes}/>
             <NotesListRender notes={notes} setNotes={setNotes}/>
+            <EditingModal />
         </div>
     )
 }

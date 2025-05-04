@@ -12,8 +12,6 @@ export default function NotesListRender({notes, setNotes}) {
         setEditingNoteId(id)
     }
 
-    console.log(editingNoteId)
-
     return (
         <ul>
             {notes.map(obj => {        
