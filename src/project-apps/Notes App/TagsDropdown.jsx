@@ -5,9 +5,8 @@ export default function TagsDropdown() {
         <div>
             <select>
                 {tagOptions.map(tag => (
-                    <option>{tag}</option>
+                    <option value={tag}>{tag}</option>
                 ))}
-                <option />
             </select>
         </div>
     )

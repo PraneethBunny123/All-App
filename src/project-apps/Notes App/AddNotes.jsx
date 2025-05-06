@@ -1,5 +1,6 @@
 import { useState } from "react"
 import {v4 as uuidv4} from 'uuid'
+import TagsDropdown from "./TagsDropdown"
 
 export default function AddNotes({setNotes}) {
     const [textTyped, setTextTyped] = useState('')
@@ -30,6 +31,7 @@ export default function AddNotes({setNotes}) {
     return (
         <div>
             <input value={textTyped} onChange={handleOnChange} type="text" placeholder="Add Note..."/>
+            <TagsDropdown />
             <button onClick={handleAddNotes}>Add Note</button>
         </div>
 
