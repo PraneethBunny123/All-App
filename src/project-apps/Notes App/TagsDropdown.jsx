@@ -3,9 +3,11 @@ import { tagOptions } from "./MOCK_DATA"
 export default function TagsDropdown() {
     return (
         <div>
-            <select>
+            <select
+                multiple
+            >
                 {tagOptions.map(tag => (
-                    <option value={tag}>{tag}</option>
+                    <option key={tag} value={tag}>{tag}</option>
                 ))}
             </select>
         </div>

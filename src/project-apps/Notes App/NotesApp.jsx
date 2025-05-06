@@ -33,7 +33,6 @@ export default function NotesApp() {
         setEditingNote(null)
     }
 
-
     return (
         <div>
             <label>Notes App</label>

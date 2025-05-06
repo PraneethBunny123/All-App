@@ -21,13 +21,14 @@ export default function AddNotes({setNotes}) {
             setNotes(prevNotes => [...prevNotes, {
                 id: uuidv4(),
                 Notes: textTyped,
-                timeStamp: timeStamp
+                timeStamp: timeStamp,
+                tags: []
             }])
             setTextTyped('')
         }
         
     }
-
+    
     return (
         <div>
             <input value={textTyped} onChange={handleOnChange} type="text" placeholder="Add Note..."/>
