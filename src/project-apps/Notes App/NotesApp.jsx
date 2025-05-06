@@ -16,6 +16,8 @@ export default function NotesApp() {
 
     const [searchNote, setSearchNote] = useState('')
 
+    const [selectedTags, setSelectedTags] = useState([])
+
     const searchedNotes = notes.filter(noteObj => noteObj.Notes.toLowerCase().includes(searchNote.toLowerCase()))
 
     useEffect(() => {
