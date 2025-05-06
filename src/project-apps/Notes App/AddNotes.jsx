@@ -5,8 +5,6 @@ import TagsDropdown from "./TagsDropdown"
 export default function AddNotes({setNotes, selectedTags, setSelectedTags}) {
     const [textTyped, setTextTyped] = useState('')
 
-    console.log(selectedTags)
-
     function handleOnChange(e) {
         setTextTyped(e.target.value)
     }

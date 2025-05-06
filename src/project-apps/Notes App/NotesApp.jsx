@@ -35,8 +35,6 @@ export default function NotesApp() {
         setEditingNote(null)
     }
 
-    console.log(notes)
-
     return (
         <div>
             <label>Notes App</label>
