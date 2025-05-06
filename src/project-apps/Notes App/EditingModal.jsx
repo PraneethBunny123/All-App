@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
+import TagsDropdown from "./TagsDropdown"
 
 export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote}) {
     const dialogRef = useRef()
@@ -35,9 +36,14 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
     return createPortal(
         <dialog ref={dialogRef}>
             <label>Edit Note</label>
-            <input type="text" value={editedText} onChange={handleOnChange}/>
-            <button onClick={handleSave}>Save</button>
-            <button onClick={handleCloseModal}>Cancel</button>
+            <div>
+                <input type="text" value={editedText} onChange={handleOnChange}/>
+                <TagsDropdown />
+            </div>
+            <div>
+                <button onClick={handleSave}>Save</button>
+                <button onClick={handleCloseModal}>Cancel</button>
+            </div>
         </dialog>,
         document.getElementById('modal')
     )
