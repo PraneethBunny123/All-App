@@ -15,7 +15,8 @@ export default function NotesListRender({notes, setNotes, setEditingNote, setIsM
             {searchedNotes.map(obj => {        
                 return (
                     <li key={obj.id}>
-                        {obj.Notes} - <span>{obj.timeStamp}</span>
+                        {obj.Notes} - {obj.tags}
+                        <span>{obj.timeStamp}</span>
                         <button onClick={() => handleEditButton(obj)}>✏️Edit</button>
                         <button onClick={() => handleRemoveNote(obj.id)}>❌</button>
                     </li>
