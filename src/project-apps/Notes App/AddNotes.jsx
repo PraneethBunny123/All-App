@@ -1,5 +1,6 @@
 import { useState } from "react"
 import {v4 as uuidv4} from 'uuid'
+import { tagOptions } from "./MOCK_DATA"
 
 export default function AddNotes({setNotes}) {
     const [textTyped, setTextTyped] = useState('')

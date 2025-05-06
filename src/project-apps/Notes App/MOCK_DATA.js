@@ -11,3 +11,5 @@ const groceries = [{id:uuidv4(),Notes:"Wine - Peller Estates Late"},
 {id:uuidv4(),Notes:"Zucchini - Yellow"},]
 
 export default groceries
+
+export const tagOptions =  ["Work", "Personal", "Urgent", "Reminder"]
