@@ -11,11 +11,11 @@ export default function NotesListRender({notes, setNotes, setEditingNote, setIsM
     }
 
     return (
-        <ul>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
             {searchedNotes.map(obj => {        
                 return (
-                    <li key={obj.id}>
-                        {obj.Notes} - {obj.tags}
+                    <li key={obj.id} className="bg-white p-4 rounded-lg shadow border flex flex-col justify-between">
+                        <div className="mb-2 text-gray-800 font-medium">{obj.Notes}</div>
                         <span>{obj.timeStamp}</span>
                         <button onClick={() => handleEditButton(obj)}>✏️Edit</button>
                         <button onClick={() => handleRemoveNote(obj.id)}>❌</button>
