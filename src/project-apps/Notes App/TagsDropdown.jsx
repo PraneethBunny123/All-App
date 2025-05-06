@@ -1,10 +1,11 @@
 import { createContext, useState } from "react"
 import { tagOptions } from "./MOCK_DATA"
+import { TagsDropdownContext } from "./TagsContext"
 
 export default function TagsDropdown() {
-    const TagsDropdownContext = createContext()
 
     const [selectedTags, setSelectedTags] = useState([])
+    console.log(selectedTags)
 
     function handleSelectTags(e) {
         const tagsArray = Array.from(e.target.selectedOptions).map(tag => tag.value)
@@ -13,8 +14,6 @@ export default function TagsDropdown() {
             [...new Set([...prevTags, ...tagsArray])]
         )
     }
-
-    console.log(selectedTags)
 
     return (
         <TagsDropdownContext.Provider value={selectedTags}>
