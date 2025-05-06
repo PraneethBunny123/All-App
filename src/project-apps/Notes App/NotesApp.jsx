@@ -27,7 +27,7 @@ export default function NotesApp() {
     function handleSaveEditedNote(updatedText) {
         setNotes(prevNotes => (
             prevNotes.map(note => note.id === editingNote.id
-                ? {...note, Notes: updatedText} : note
+                ? {...note, Notes: updatedText, tags: [...selectedTags]} : note
             )
         ))
 
@@ -56,6 +56,7 @@ export default function NotesApp() {
                 setIsModalOpen={setIsModalOpen}
                 editingNote={editingNote}   
                 onSave={handleSaveEditedNote} 
+                setSelectedTags={setSelectedTags}
             />
         </div>
     )

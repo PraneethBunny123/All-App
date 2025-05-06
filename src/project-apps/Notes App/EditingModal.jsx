@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import TagsDropdown from "./TagsDropdown"
 
-export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote}) {
+export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote, setSelectedTags}) {
     const dialogRef = useRef()
     const [editedText, setEditedText] = useState('')
 
@@ -38,7 +38,7 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
             <label>Edit Note</label>
             <div>
                 <input type="text" value={editedText} onChange={handleOnChange}/>
-                <TagsDropdown />
+                <TagsDropdown setSelectedTags={setSelectedTags}/>
             </div>
             <div>
                 <button onClick={handleSave}>Save</button>
