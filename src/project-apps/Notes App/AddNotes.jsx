@@ -1,11 +1,9 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import {v4 as uuidv4} from 'uuid'
 import TagsDropdown from "./TagsDropdown"
-import { TagsDropdownContext } from "./TagsContext"
 
-export default function AddNotes({setNotes}) {
+export default function AddNotes({setNotes, selectedTags, setSelectedTags}) {
     const [textTyped, setTextTyped] = useState('')
-    const selectedTags = useContext(TagsDropdownContext)
 
     console.log(selectedTags)
 
@@ -25,7 +23,7 @@ export default function AddNotes({setNotes}) {
                 id: uuidv4(),
                 Notes: textTyped,
                 timeStamp: timeStamp,
-                tags: []
+                tags: [...selectedTags]
             }])
             setTextTyped('')
         }
@@ -35,7 +33,7 @@ export default function AddNotes({setNotes}) {
     return (
         <div>
             <input value={textTyped} onChange={handleOnChange} type="text" placeholder="Add Note..."/>
-            <TagsDropdown />
+            <TagsDropdown setSelectedTags={setSelectedTags}/>
             <button onClick={handleAddNotes}>Add Note</button>
         </div>
 

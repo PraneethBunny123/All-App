@@ -35,11 +35,17 @@ export default function NotesApp() {
         setEditingNote(null)
     }
 
+    console.log(notes)
+
     return (
         <div>
             <label>Notes App</label>
             <SearchNotes searchNote={searchNote} setSearchNote={setSearchNote}/>
-            <AddNotes setNotes={setNotes}/>
+            <AddNotes 
+                setNotes={setNotes}
+                setSelectedTags={setSelectedTags}
+                selectedTags={selectedTags}    
+            />
             <NotesListRender 
                 notes={notes} 
                 setNotes={setNotes} 
