@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { createContext, useState } from "react"
 import { tagOptions } from "./MOCK_DATA"
 
 export default function TagsDropdown() {
+    const TagsDropdownContext = createContext()
+
     const [selectedTags, setSelectedTags] = useState([])
 
     function handleSelectTags(e) {
@@ -15,15 +17,17 @@ export default function TagsDropdown() {
     console.log(selectedTags)
 
     return (
-        <div>
-            <select
-                multiple
-                onChange={handleSelectTags}
-            >
-                {tagOptions.map(tag => (
-                    <option key={tag} value={tag}>{tag}</option>
-                ))}
-            </select>
-        </div>
+        <TagsDropdownContext.Provider value={selectedTags}>
+            <div>
+                <select
+                    multiple
+                    onChange={handleSelectTags}
+                >
+                    {tagOptions.map(tag => (
+                        <option key={tag} value={tag}>{tag}</option>
+                    ))}
+                </select>
+            </div>
+        </TagsDropdownContext.Provider>
     )
 }
