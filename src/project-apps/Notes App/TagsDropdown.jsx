@@ -9,6 +9,8 @@ export default function TagsDropdown({selectedTags, setSelectedTags}) {
         setSelectedTags(prevTags => [...prevTags, tag])
     }
 
+    console.log(selectedTags)
+
     return (
         <div>
             <label className="block mb-1 font-medium text-gray-700">Select Tags:</label>
@@ -22,6 +24,7 @@ export default function TagsDropdown({selectedTags, setSelectedTags}) {
                             <input 
                                 type="checkbox"
                                 readOnly
+                                checked={selectedTags.includes(tag)}
                             />
                             <span>{tag}</span>
                         </div>
