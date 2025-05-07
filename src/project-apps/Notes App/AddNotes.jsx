@@ -33,13 +33,13 @@ export default function AddNotes({setNotes}) {
     }
 
     return (
-        <div className="bg-white shadow-md rounded-xl p-4 mb-6 space-y-3">
+        <div className="bg-white shadow-lg rounded-2xl p-6 mb-6 space-y-4">
             <input 
                 value={textTyped} 
                 onChange={handleOnChange} 
                 type="text" 
                 placeholder="Add a new Note..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <TagsDropdown 
                 selectedTags={selectedTags} 
@@ -49,7 +49,7 @@ export default function AddNotes({setNotes}) {
             />
             <button 
                 onClick={handleAddNotes}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition"
+                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-2 rounded-xl font-semibold transition"
             >
                 Add Note
             </button>

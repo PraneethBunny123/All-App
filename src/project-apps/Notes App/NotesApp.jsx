@@ -38,9 +38,9 @@ export default function NotesApp() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6">
-            <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6 space-y-6">
-                <h1 className="text-2xl font-semibold text-gray-800 text-center">Notes App</h1>            
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-6">
+            <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl p-8 space-y-8">
+                <h1 className="text-3xl font-bold text-gray-800 text-center">Notes App</h1>            
                 <SearchNotes 
                     searchNote={searchNote} 
                     setSearchNote={setSearchNote}

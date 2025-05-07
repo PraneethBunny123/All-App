@@ -10,8 +10,8 @@ export default function SearchNotes({searchNote, setSearchNote}) {
                 type="text" 
                 value={searchNote} 
                 onChange={handleSearchNote}
-                placeholder="Search notes..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                placeholder="🔍Search notes..."
+                className="w-full px-5 py-3 border border-gray-300 rounded-xl shadow focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white"
             />
         </div>
     )
