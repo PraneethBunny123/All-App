@@ -58,6 +58,7 @@ export default function NotesApp() {
                     editingNote={editingNote}   
                     onSave={handleSaveEditedNote} 
                     setSelectedTags={setSelectedTags}
+                    selectedTags={selectedTags}
                 />
             </div>
         </div>

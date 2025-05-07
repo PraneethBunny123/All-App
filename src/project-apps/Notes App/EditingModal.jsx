@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import TagsDropdown from "./TagsDropdown"
 
-export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote, setSelectedTags}) {
+export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote, setSelectedTags, selectedTags}) {
     const dialogRef = useRef()
     const [editedText, setEditedText] = useState('')
 
@@ -44,7 +44,7 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
                     className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                     placeholder="Edit your note..."
                 />
-                <TagsDropdown setSelectedTags={setSelectedTags}/>
+                <TagsDropdown selectedTags={selectedTags} setSelectedTags={setSelectedTags}/>
             </div>
             <div className="flex justify-end gap-3">
                 <button 
