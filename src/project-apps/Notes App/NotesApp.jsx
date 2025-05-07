@@ -16,6 +16,7 @@ export default function NotesApp() {
 
     const [searchNote, setSearchNote] = useState('')
 
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [selectedTags, setSelectedTags] = useState([])
 
     const searchedNotes = notes.filter(noteObj => noteObj.Notes.toLowerCase().includes(searchNote.toLowerCase()))
@@ -43,7 +44,9 @@ export default function NotesApp() {
                 <AddNotes 
                     setNotes={setNotes}
                     setSelectedTags={setSelectedTags}
-                    selectedTags={selectedTags}    
+                    selectedTags={selectedTags} 
+                    setIsDropdownOpen={setIsDropdownOpen}
+                    isDropdownOpen={isDropdownOpen}   
                 />
                 <NotesListRender 
                     notes={notes} 
@@ -59,6 +62,8 @@ export default function NotesApp() {
                     onSave={handleSaveEditedNote} 
                     setSelectedTags={setSelectedTags}
                     selectedTags={selectedTags}
+                    isDropdownOpen={isDropdownOpen}
+                    setIsDropdownOpen={setIsDropdownOpen}
                 />
             </div>
         </div>

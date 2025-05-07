@@ -1,9 +1,7 @@
 import { useState } from "react"
 import { tagOptions } from "./MOCK_DATA"
 
-export default function TagsDropdown({selectedTags, setSelectedTags}) {
-
-    const [isDropdownOpen, setIsDropDownOpen] = useState(false)
+export default function TagsDropdown({selectedTags, setSelectedTags, isDropdownOpen, setIsDropdownOpen}) {
 
     function handleTagSelection(tag) {
         if(selectedTags.includes(tag)) {
@@ -14,13 +12,11 @@ export default function TagsDropdown({selectedTags, setSelectedTags}) {
         }
     }
 
-    console.log(isDropdownOpen)
-
     return (
         <div>
             <label className="block mb-1 font-medium text-gray-700">Select Tags:</label>
             <button 
-                onClick={() => setIsDropDownOpen(prev => !prev)}
+                onClick={() => setIsDropdownOpen(prev => !prev)}
                 className="w-full border px-4 py-2 rounded text-left bg-white shadow-sm hover:border-blue-400 focus:outline-none"
             >
                 {selectedTags?.length >0 ? selectedTags.join(', ') : 'Choose Tags'}
