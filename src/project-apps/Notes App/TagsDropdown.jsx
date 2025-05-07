@@ -16,6 +16,16 @@ export default function TagsDropdown({setSelectedTags}) {
             <button>
                 Choose Tags
             </button>
+
+            {tagOptions.map(tag => (
+                <div key={tag}>
+                    <input 
+                        type="checkbox"
+                        readOnly
+                    />
+                    <span>{tag}</span>
+                </div>
+            ))}
         </div>
     )
 }
