@@ -31,6 +31,8 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
         if(editedText.trim() !== '') {
             onSave(editedText)
         }
+        setSelectedTags([])
+        setIsDropdownOpen(false)
     }
 
     console.log(editedText)

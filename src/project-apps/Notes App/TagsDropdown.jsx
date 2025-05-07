@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { tagOptions } from "./MOCK_DATA"
 
 export default function TagsDropdown({selectedTags, setSelectedTags, isDropdownOpen, setIsDropdownOpen}) {
