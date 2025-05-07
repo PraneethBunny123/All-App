@@ -6,7 +6,12 @@ export default function TagsDropdown({selectedTags, setSelectedTags}) {
     const [isDropdownOpen, setIsDropDownOpen] = useState(false)
 
     function handleTagSelection(tag) {
-        setSelectedTags(prevTags => [...prevTags, tag])
+        if(selectedTags.includes(tag)) {
+            setSelectedTags(prevTags => prevTags.filter(t => t !== tag))
+        }else{
+            setSelectedTags(prevTags => [...prevTags, tag])
+
+        }
     }
 
     console.log(selectedTags)
