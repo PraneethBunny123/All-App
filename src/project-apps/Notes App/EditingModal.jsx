@@ -5,7 +5,9 @@ import TagsDropdown from "./TagsDropdown"
 export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote, setSelectedTags, selectedTags}) {
     const dialogRef = useRef()
     const [editedText, setEditedText] = useState('')
-    const [isDropdownOpenModal, setIsDropdownOpenModal] = useState(false);
+
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const [selectedTags, setSelectedTags] = useState([])
 
     useEffect(() => {
         if(isModalOpen) {
@@ -16,8 +18,10 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
     }, [isModalOpen])
 
     useEffect(() => {
-        if(editingNote)
+        if(editingNote){
             setEditedText(editingNote.Notes)
+            setSelectedTags(editingNote.tags || [])
+        }
     }, [editingNote])
 
     function handleOnChange(e) {
@@ -26,14 +30,15 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
 
     function handleCloseModal() {
         setIsModalOpen(false)
+        setIsDropdownOpen(false)
     }
 
     function handleSave() {
         if(editedText.trim() !== '') {
-            onSave(editedText)
+            onSave(editedText, selectedTags)
+            setIsDropdownOpen(false)
         }
         setSelectedTags([])
-        setIsDropdownOpenModal(false)
     }
 
     console.log(editedText)
