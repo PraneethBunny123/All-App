@@ -41,8 +41,6 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
         setSelectedTags([])
     }
 
-    console.log(editedText)
-
     return createPortal(
         <dialog ref={dialogRef} className="rounded-xl shadow-lg border w-[90%] md:w-[30rem] p-6 space-y-4 backdrop:bg-black/30">
             <h2 className="text-lg font-semibold text-gray-800">Edit Note</h2>            

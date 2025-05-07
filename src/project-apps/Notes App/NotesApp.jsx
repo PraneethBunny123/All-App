@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import groceries from "./MOCK_DATA"
 import NotesListRender from "./NotesListRender"
 import AddNotes from "./AddNotes"
@@ -16,7 +16,11 @@ export default function NotesApp() {
 
     const [searchNote, setSearchNote] = useState('')
 
-    const searchedNotes = notes.filter(noteObj => noteObj.Notes.toLowerCase().includes(searchNote.toLowerCase()))
+    const searchedNotes = useMemo(() => 
+        notes.filter(noteObj => 
+            noteObj.Notes.toLowerCase().includes(searchNote.toLowerCase())
+        ), [notes, searchNote]
+    ) 
 
     useEffect(() => {
         localStorage.setItem('notes', JSON.stringify(notes))
