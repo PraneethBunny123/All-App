@@ -6,7 +6,7 @@ export default function TagsDropdown({selectedTags, setSelectedTags}) {
     const [isDropdownOpen, setIsDropDownOpen] = useState(false)
 
     function handleTagSelection(tag) {
-        
+        setSelectedTags(prevTags => [...prevTags, tag])
     }
 
     return (
@@ -18,7 +18,7 @@ export default function TagsDropdown({selectedTags, setSelectedTags}) {
             {isDropdownOpen && (
                 <div>
                     {tagOptions.map(tag => (
-                        <div key={tag}>
+                        <div key={tag} onClick={() => handleTagSelection(tag)}>
                             <input 
                                 type="checkbox"
                                 readOnly
