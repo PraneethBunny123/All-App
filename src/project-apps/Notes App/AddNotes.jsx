@@ -2,8 +2,11 @@ import { useState } from "react"
 import {v4 as uuidv4} from 'uuid'
 import TagsDropdown from "./TagsDropdown"
 
-export default function AddNotes({setNotes, selectedTags, setSelectedTags, isDropdownOpen, setIsDropdownOpen}) {
+export default function AddNotes({setNotes, selectedTags, setSelectedTags}) {
     const [textTyped, setTextTyped] = useState('')
+
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const [selectedTags, setSelectedTags] = useState([])
 
     function handleOnChange(e) {
         setTextTyped(e.target.value)

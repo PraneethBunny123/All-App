@@ -37,13 +37,12 @@ export default function NotesApp() {
         <div className="min-h-screen bg-gray-100 p-6">
             <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6 space-y-6">
                 <h1 className="text-2xl font-semibold text-gray-800 text-center">Notes App</h1>            
-                <SearchNotes searchNote={searchNote} setSearchNote={setSearchNote}/>
+                <SearchNotes 
+                    searchNote={searchNote} 
+                    setSearchNote={setSearchNote}
+                />
                 <AddNotes 
                     setNotes={setNotes}
-                    setSelectedTags={setSelectedTags}
-                    selectedTags={selectedTags} 
-                    setIsDropdownOpen={setIsDropdownOpen}
-                    isDropdownOpen={isDropdownOpen}   
                 />
                 <NotesListRender 
                     notes={notes} 
@@ -57,10 +56,6 @@ export default function NotesApp() {
                     setIsModalOpen={setIsModalOpen}
                     editingNote={editingNote}   
                     onSave={handleSaveEditedNote} 
-                    setSelectedTags={setSelectedTags}
-                    selectedTags={selectedTags}
-                    isDropdownOpen={isDropdownOpen}
-                    setIsDropdownOpen={setIsDropdownOpen}
                 />
             </div>
         </div>
