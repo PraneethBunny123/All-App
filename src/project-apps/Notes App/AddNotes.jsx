@@ -38,7 +38,7 @@ export default function AddNotes({setNotes, selectedTags, setSelectedTags}) {
                 placeholder="Add a new Note..."
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-            <TagsDropdown setSelectedTags={setSelectedTags}/>
+            <TagsDropdown selectedTags={selectedTags} setSelectedTags={setSelectedTags}/>
             <button 
                 onClick={handleAddNotes}
                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition"

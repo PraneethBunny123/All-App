@@ -1,23 +1,19 @@
 import { useState } from "react"
 import { tagOptions } from "./MOCK_DATA"
 
-export default function TagsDropdown({setSelectedTags}) {
+export default function TagsDropdown({selectedTags, setSelectedTags}) {
 
     const [isDropdownOpen, setIsDropDownOpen] = useState(false)
 
-    function handleSelectTags(e) {
-        const tagsArray = Array.from(e.target.selectedOptions).map(tag => tag.value)
-
-        setSelectedTags(prevTags => 
-            [...new Set([...prevTags, ...tagsArray])]
-        )
+    function handleTagSelection(tag) {
+        
     }
 
     return (
         <div>
             <label className="block mb-1 font-medium text-gray-700">Select Tags:</label>
             <button onClick={() => setIsDropDownOpen(prev => !prev)}>
-                Choose Tags
+                {selectedTags?.length >0 ? selectedTags.join(', ') : 'Choose Tags'}
             </button>
             {isDropdownOpen && (
                 <div>
