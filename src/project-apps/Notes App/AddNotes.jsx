@@ -25,8 +25,8 @@ export default function AddNotes({setNotes, selectedTags, setSelectedTags}) {
             }])
             setTextTyped('')
         }
-        setSelectedTags([])
         
+        setSelectedTags([])
     }
 
     return (
