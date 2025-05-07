@@ -14,6 +14,8 @@ export default function TagsDropdown({selectedTags, setSelectedTags}) {
         }
     }
 
+    console.log(isDropdownOpen)
+
     return (
         <div>
             <label className="block mb-1 font-medium text-gray-700">Select Tags:</label>
@@ -24,7 +26,7 @@ export default function TagsDropdown({selectedTags, setSelectedTags}) {
                 {selectedTags?.length >0 ? selectedTags.join(', ') : 'Choose Tags'}
             </button>
             {isDropdownOpen && (
-                <div className="absolute z-10 mt-1 w-full bg-white border rounded shadow-lg max-h-48 overflow-y-auto">
+                <div className="mt-2 w-full bg-white border rounded shadow-sm max-h-48 overflow-y-auto">
                     {tagOptions.map(tag => (
                         <div 
                             key={tag} 
