@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import TagsDropdown from "./TagsDropdown"
 
-export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote, setSelectedTags, selectedTags, setIsDropdownOpen, isDropdownOpen}) {
+export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editingNote, setSelectedTags, selectedTags}) {
     const dialogRef = useRef()
     const [editedText, setEditedText] = useState('')
+    const [isDropdownOpenModal, setIsDropdownOpenModal] = useState(false);
 
     useEffect(() => {
         if(isModalOpen) {
@@ -32,7 +33,7 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
             onSave(editedText)
         }
         setSelectedTags([])
-        setIsDropdownOpen(false)
+        setIsDropdownOpenModal(false)
     }
 
     console.log(editedText)
@@ -51,8 +52,8 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
                 <TagsDropdown 
                     selectedTags={selectedTags} 
                     setSelectedTags={setSelectedTags}
-                    isDropdownOpen={isDropdownOpen}
-                    setIsDropdownOpen={setIsDropdownOpen}    
+                    isDropdownOpen={isDropdownOpenModal}
+                    setIsDropdownOpen={setIsDropdownOpenModal}    
                 />
             </div>
             <div className="flex justify-end gap-3">
