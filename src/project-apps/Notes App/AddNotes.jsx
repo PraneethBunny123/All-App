@@ -2,7 +2,7 @@ import { useState } from "react"
 import {v4 as uuidv4} from 'uuid'
 import TagsDropdown from "./TagsDropdown"
 
-export default function AddNotes({setNotes, selectedTags, setSelectedTags}) {
+export default function AddNotes({setNotes}) {
     const [textTyped, setTextTyped] = useState('')
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
