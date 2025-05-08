@@ -16,9 +16,16 @@ export default function TagsDropdown({selectedTags, setSelectedTags, isDropdownO
             <label className="block mb-1 font-medium text-gray-700">Select Tags:</label>
             <button 
                 onClick={() => setIsDropdownOpen(prev => !prev)}
-                className="w-full border px-5 py-3 rounded-xl bg-white shadow hover:border-blue-400 focus:outline-none text-sm font-medium"
+                className="w-full border px-5 py-3 rounded-xl bg-white shadow hover:border-blue-400 focus:outline-none text-sm font-medium flex flex-wrap gap-2"            
             >
-                {selectedTags?.length >0 ? selectedTags.join(', ') : '🏷️Choose Tags'}
+                {selectedTags?.length >0 ? (
+                    selectedTags.map(tag => (
+                        <span>
+                            #{tag}
+                        </span>
+                    ))) : (
+                    <span>🏷️Choose Tags</span>
+                )}
             </button>
             {isDropdownOpen && (
                 <div className="mt-2 w-full bg-white border rounded-xl shadow max-h-48 overflow-y-auto">
