@@ -43,7 +43,7 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
 
     return createPortal(
         <dialog ref={dialogRef} className="rounded-xl shadow-lg border w-[90%] md:w-[30rem] p-6 space-y-4 backdrop:bg-black/30">
-            <h2 className="text-lg font-semibold text-gray-800">Edit Note</h2>            
+            <h2 className="text-xl font-bold text-gray-800">Edit Note</h2>            
             <div className="space-y-3">
                 <input 
                     type="text" 
@@ -59,16 +59,16 @@ export default function EditingModal({isModalOpen, setIsModalOpen, onSave, editi
                     setIsDropdownOpen={setIsDropdownOpen}    
                 />
             </div>
-            <div className="flex justify-end gap-3">
+            <div className="flex justify-end gap-2">
                 <button 
                     onClick={handleSave}
-                    className="px-4 py-2 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"    
+                    className="bg-blue-500 text-white px-4 py-2 rounded-xl"    
                 >
                     Save
                 </button>
                 <button 
                     onClick={handleCloseModal}
-                    className="px-4 py-2 text-sm bg-gray-300 rounded hover:bg-gray-400"
+                    className="bg-gray-200 px-4 py-2 rounded-xl"
                 >
                     Cancel
                 </button>
