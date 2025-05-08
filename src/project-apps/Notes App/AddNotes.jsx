@@ -38,8 +38,8 @@ export default function AddNotes({setNotes}) {
                 value={textTyped} 
                 onChange={handleOnChange} 
                 type="text" 
-                placeholder="Add a new Note..."
-                className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+                placeholder="📝 Write your note here..."
+                className="w-full px-5 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <TagsDropdown 
                 selectedTags={selectedTags} 
