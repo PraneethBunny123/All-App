@@ -42,7 +42,7 @@ export default function TagsDropdown({selectedTags, setSelectedTags, isDropdownO
                                 type="checkbox"
                                 readOnly
                                 checked={selectedTags.includes(tag)}
-                                className="mr-2"
+                                className="mr-2 accent-blue-500"
                             />
                             <span>{tag}</span>
                         </div>
