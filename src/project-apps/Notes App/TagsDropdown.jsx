@@ -31,7 +31,7 @@ export default function TagsDropdown({selectedTags, setSelectedTags, isDropdownO
                 )}
             </button>
             {isDropdownOpen && (
-                <div className="mt-2 w-full bg-white border rounded-xl shadow max-h-48 overflow-y-auto">
+                <div className="mt-2 w-full bg-white border border-gray-300 rounded-xl shadow max-h-48 overflow-y-auto">
                     {tagOptions.map(tag => (
                         <div 
                             key={tag} 
