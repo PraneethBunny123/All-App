@@ -20,11 +20,11 @@ export default function TagsDropdown({selectedTags, setSelectedTags, isDropdownO
             >
                 {selectedTags?.length >0 ? (
                     selectedTags.map(tag => (
-                        <span>
+                        <span className="bg-blue-200 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
                             #{tag}
                         </span>
                     ))) : (
-                    <span>🏷️Choose Tags</span>
+                    <span className="text-gray-400">🏷️Choose Tags</span>
                 )}
             </button>
             {isDropdownOpen && (
