@@ -1,20 +1,14 @@
-import { useState } from "react";
 import { QUESTIONS } from "./QUESTIONS.JS";
+import Flashcard from "./Flashcard";
 
 export default function FlashcardApp() {
-    const [isQuestionVisible, setIsQuestionVisible] = useState(true)
 
-    function handleCardClick() {
-        setIsQuestionVisible(prevState => !prevState)
-    }
 
     return (
         <div>
             <ul>
-                {QUESTIONS.map(question => (
-                    <button key={question.id} onClick={handleCardClick}>
-                        {isQuestionVisible ? question.question : question.answer}
-                    </button>
+                {QUESTIONS.map(question => (    
+                    <Flashcard key={question.id} question={question}/>
                 ))}
             </ul>
         </div>
