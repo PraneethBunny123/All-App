@@ -5,7 +5,7 @@ export default function FlashcardApp() {
     const [isQuestionVisible, setIsQuestionVisible] = useState(true)
 
     function handleCardClick() {
-
+        setIsQuestionVisible(prevState => !prevState)
     }
 
     return (
