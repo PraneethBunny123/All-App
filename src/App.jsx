@@ -23,6 +23,7 @@ import SignupForm from './project-apps/Form/SignupForm'
 import TypingTracker from './project-apps/UseEffectMastery/TypingTracker'
 import InfiniteScroll from './project-apps/InfiniteScroll/InfiniteScroll'
 import NotesApp from './project-apps/Notes App/NotesApp'
+import FlashcardApp from './project-apps/QuizApp/FlashcardApp'
 
 function App() {
 
@@ -52,7 +53,8 @@ function App() {
       {/*<SignupForm />*/}
       {/*<TypingTracker />*/}
       {/*<InfiniteScroll />*/}
-      <NotesApp />
+      {/*<NotesApp />*/}
+      <FlashcardApp />
     </div>
   )
 }
