@@ -6,12 +6,14 @@ export default function Dropdown() {
 
     return (
         <div>
-            <button>Select Category</button>
-            {isDropdownOpen &&
-                QUESTIONS.map(question => 
-                    <button key={question.id}>{question.category}</button>
-                )
-            }
+            <button onClick={() => setIsDropdownOpen(prevState => !prevState)}>Select Category</button>
+            <ul>
+                {isDropdownOpen &&
+                    QUESTIONS.map(question => 
+                        <button key={question.id}>{question.category}</button>
+                    )
+                }
+            </ul>
         </div>
     )
 }
