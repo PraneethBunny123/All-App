@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { QUESTIONS } from "./QUESTIONS.JS";
 
-export default function Dropdown() {
+export default function Dropdown({allCategories}) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
     return (
@@ -9,9 +8,7 @@ export default function Dropdown() {
             <button onClick={() => setIsDropdownOpen(prevState => !prevState)}>Select Category</button>
             <ul>
                 {isDropdownOpen &&
-                    QUESTIONS.map(question => 
-                        <button key={question.id}>{question.category}</button>
-                    )
+                    allCategories.map(question => <button key={question}>{question}</button>)
                 }
             </ul>
         </div>
