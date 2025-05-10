@@ -10,13 +10,13 @@ export default function Dropdown({allCategories, selectedCategory, setSelectedCa
     return (
         <div>
             <button onClick={() => setIsDropdownOpen(prevState => !prevState)}>Select Category</button>
-            <ul>
-                {isDropdownOpen &&
-                    allCategories.map(category => 
+            {isDropdownOpen &&
+                <ul>
+                    {allCategories.map(category => 
                         <button key={category} onClick={() => handleSelectCategory(category)}>{category}</button>
-                    )
-                }
-            </ul>
+                    )}
+                </ul>
+            }
         </div>
     )
 }
