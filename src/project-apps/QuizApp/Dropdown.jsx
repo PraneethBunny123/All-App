@@ -20,11 +20,14 @@ export default function Dropdown({allCategories, selectedCategory, setSelectedCa
                 </svg>
             </button>
             {isDropdownOpen &&
-                <ul>
+                <ul className="absolute z-10 mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg">
                     {allCategories.map(category => 
                         <li key={category}>
                             <button
                                 onClick={() => handleSelectCategory(category)} 
+                                className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+                                    selectedCategory === category ? "bg-gray-100 font-semibold" : ""
+                                }`}
                             >
                                 {category}
                             </button>
