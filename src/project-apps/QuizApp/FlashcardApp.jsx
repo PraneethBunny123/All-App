@@ -4,6 +4,7 @@ import { useState } from "react";
 import Dropdown from "./Dropdown";
 
 export default function FlashcardApp() {
+    const [selectedCategory, setSelectedCategory] = useState('All')
     
     const allCategories = ['All', ...new Set(QUESTIONS.map(q => q.category))]
 
