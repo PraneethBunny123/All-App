@@ -8,6 +8,8 @@ export default function FlashcardApp() {
     
     const allCategories = ['All', ...new Set(QUESTIONS.map(q => q.category))]
 
+    const filteredQuesions = selectedCategory === 'All' ? QUESTIONS : QUESTIONS.filter(question => question.category === selectedCategory)
+
 
 
     return (
@@ -18,7 +20,7 @@ export default function FlashcardApp() {
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}    
                 />
-                {QUESTIONS.map(question => {
+                {filteredQuesions.map(question => {
                     return <Flashcard key={question.id} question={question}/>
                 })}
             </div>
