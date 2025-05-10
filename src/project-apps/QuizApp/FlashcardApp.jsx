@@ -8,19 +8,19 @@ export default function FlashcardApp() {
     
     const allCategories = ['All', ...new Set(QUESTIONS.map(q => q.category))]
 
-    const filteredQuesions = selectedCategory === 'All' ? QUESTIONS : QUESTIONS.filter(question => question.category === selectedCategory)
+    const filteredQuestions = selectedCategory === 'All' ? QUESTIONS : QUESTIONS.filter(question => question.category === selectedCategory)
 
 
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+            <Dropdown 
+                allCategories={allCategories}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}    
+            />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <Dropdown 
-                    allCategories={allCategories}
-                    selectedCategory={selectedCategory}
-                    setSelectedCategory={setSelectedCategory}    
-                />
-                {filteredQuesions.map(question => {
+                {filteredQuestions.map(question => {
                     return <Flashcard key={question.id} question={question}/>
                 })}
             </div>

@@ -5,6 +5,7 @@ export default function Dropdown({allCategories, selectedCategory, setSelectedCa
 
     function handleSelectCategory(category) {
         setSelectedCategory(category)
+        setIsDropdownOpen(false)
     }
 
     return (
@@ -13,7 +14,13 @@ export default function Dropdown({allCategories, selectedCategory, setSelectedCa
             {isDropdownOpen &&
                 <ul>
                     {allCategories.map(category => 
-                        <button key={category} onClick={() => handleSelectCategory(category)}>{category}</button>
+                        <li key={category}>
+                            <button
+                                onClick={() => handleSelectCategory(category)} 
+                            >
+                                {category}
+                            </button>
+                        </li>
                     )}
                 </ul>
             }
