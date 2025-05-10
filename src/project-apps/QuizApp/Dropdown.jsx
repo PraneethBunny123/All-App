@@ -9,7 +9,7 @@ export default function Dropdown({allCategories, selectedCategory, setSelectedCa
     }
 
     return (
-        <div>
+        <div className="relative inline-block text-left">
             <button onClick={() => setIsDropdownOpen(prevState => !prevState)}>Select Category</button>
             {isDropdownOpen &&
                 <ul>
