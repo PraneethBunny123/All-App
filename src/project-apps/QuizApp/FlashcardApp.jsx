@@ -5,10 +5,18 @@ import Dropdown from "./Dropdown";
 
 export default function FlashcardApp() {
     const [selectedCategory, setSelectedCategory] = useState('All')
+
+    const [currentPage, setCurrentPage] = useState(1)
     
     const allCategories = ['All', ...new Set(QUESTIONS.map(q => q.category))]
 
     const filteredQuestions = selectedCategory === 'All' ? QUESTIONS : QUESTIONS.filter(question => question.category === selectedCategory)
+
+    const cardsPerPage = 1
+    const totalNumberOfPages = Math.ceil(filteredQuestions.length/cardsPerPage)
+    console.log(totalNumberOfPages)
+    // const startIndex = 1
+    // const endIndex = 
 
 
 
@@ -20,7 +28,7 @@ export default function FlashcardApp() {
                 setSelectedCategory={setSelectedCategory}    
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {filteredQuestions.map(question => {
+                {filteredQuestions.slice().map(question => {
                     return <Flashcard key={question.id} question={question}/>
                 })}
             </div>
