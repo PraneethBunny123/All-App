@@ -1,6 +1,6 @@
 import { QUESTIONS } from "./QUESTIONS.JS";
 import Flashcard from "./Flashcard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dropdown from "./Dropdown";
 
 export default function FlashcardApp() {
@@ -26,6 +26,9 @@ export default function FlashcardApp() {
         setCurrentPage(prevPage => prevPage+1)
     }
 
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [selectedCategory])
 
     return (
         <div className="min-h-screen bg-gray-100 py-10 px-4 flex flex-col items-center space-y-10">
