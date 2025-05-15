@@ -15,8 +15,8 @@ export default function FlashcardApp() {
     const cardsPerPage = 1
     const totalNumberOfPages = Math.ceil(filteredQuestions.length/cardsPerPage)
     console.log(totalNumberOfPages)
-    // const startIndex = 1
-    // const endIndex = 
+    const startIndex = (currentPage-1)*cardsPerPage
+    const endIndex = startIndex + cardsPerPage
 
 
 
@@ -28,7 +28,7 @@ export default function FlashcardApp() {
                 setSelectedCategory={setSelectedCategory}    
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {filteredQuestions.slice().map(question => {
+                {filteredQuestions.slice(startIndex, endIndex).map(question => {
                     return <Flashcard key={question.id} question={question}/>
                 })}
             </div>
