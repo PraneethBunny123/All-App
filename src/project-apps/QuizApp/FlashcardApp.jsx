@@ -14,7 +14,7 @@ export default function FlashcardApp() {
 
     const cardsPerPage = 1
     const totalNumberOfPages = Math.ceil(filteredQuestions.length/cardsPerPage)
-    console.log(totalNumberOfPages)
+
     const startIndex = (currentPage-1)*cardsPerPage
     const endIndex = startIndex + cardsPerPage
 

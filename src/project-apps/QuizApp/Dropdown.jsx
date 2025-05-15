@@ -8,7 +8,6 @@ export default function Dropdown({allCategories, selectedCategory, setSelectedCa
         setIsDropdownOpen(false)
     }
 
-    console.log(selectedCategory)
 
     return (
         <div className="relative inline-block text-left">
