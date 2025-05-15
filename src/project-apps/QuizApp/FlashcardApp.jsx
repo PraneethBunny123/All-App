@@ -18,6 +18,13 @@ export default function FlashcardApp() {
     const startIndex = (currentPage-1)*cardsPerPage
     const endIndex = startIndex + cardsPerPage
 
+    function handlePrevButton() {
+        setCurrentPage(prevPage => prevPage-1)
+    }
+
+    function handleNextButton() {
+        setCurrentPage(prevPage => prevPage+1)
+    }
 
 
     return (
