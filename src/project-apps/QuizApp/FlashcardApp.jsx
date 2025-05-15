@@ -69,28 +69,10 @@ export default function FlashcardApp() {
                 </button>
             </div>
             <div className="flex items-center space-x-4 mt-6">
-                <button 
-                    onClick={handlePrevButton}
-                    disabled={currentPage === 1}
-                    className={`px-4 py-2 rounded-md text-white font-medium transition duration-200 ${
-                        currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-                    }`}
-                >
-                    prev
-                </button>
+                
                 <span className="text-lg font-semibold text-gray-700">
                     Question {currentPage} of {totalNumberOfPages}
                 </span>
-
-                <button 
-                    onClick={handleNextButton}
-                    disabled={currentPage === totalNumberOfPages}
-                    className={`px-4 py-2 rounded-md text-white font-medium transition duration-200 ${
-                        currentPage === totalNumberOfPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-                    }`}
-                >
-                    next
-                </button>
             </div>
         </div>
     )
