@@ -37,35 +37,37 @@ export default function FlashcardApp() {
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}    
             />
-            <button
-                onClick={handlePrevButton}
-                disabled={currentPage === 1}
-                className={`p-3 rounded-full text-white transition ${
-                    currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-                }`}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
+            <div className="flex items-center justify-center space-x-6">
+                <button
+                    onClick={handlePrevButton}
+                    disabled={currentPage === 1}
+                    className={`p-3 rounded-full text-white transition ${
+                        currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                    }`}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {filteredQuestions.slice(startIndex, endIndex).map(question => {
-                    return <Flashcard key={question.id} question={question}/>
-                })}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {filteredQuestions.slice(startIndex, endIndex).map(question => {
+                        return <Flashcard key={question.id} question={question}/>
+                    })}
+                </div>
+
+                <button
+                    onClick={handleNextButton}
+                    disabled={currentPage === totalNumberOfPages}
+                    className={`p-3 rounded-full text-white transition ${
+                        currentPage === totalNumberOfPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                    }`}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
-
-            <button
-                onClick={handleNextButton}
-                disabled={currentPage === totalNumberOfPages}
-                className={`p-3 rounded-full text-white transition ${
-                    currentPage === totalNumberOfPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-                }`}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-            </button>
             <div className="flex items-center space-x-4 mt-6">
                 <button 
                     onClick={handlePrevButton}
