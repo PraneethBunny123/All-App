@@ -52,7 +52,10 @@ export default function FlashcardApp() {
                 >
                     prev
                 </button>
-                <button>{currentPage}</button>
+                <span className="text-lg font-semibold text-gray-700">
+                    Question {currentPage} of {totalNumberOfPages}
+                </span>
+
                 <button 
                     onClick={handleNextButton}
                     disabled={currentPage === totalNumberOfPages}
