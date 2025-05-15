@@ -32,6 +32,11 @@ export default function FlashcardApp() {
                     return <Flashcard key={question.id} question={question}/>
                 })}
             </div>
+            <div>
+                <button>prev</button>
+                <button>{currentPage}</button>
+                <button>next</button>
+            </div>
         </div>
     )
 }
