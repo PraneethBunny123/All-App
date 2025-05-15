@@ -59,6 +59,9 @@ export default function FlashcardApp() {
                 <button 
                     onClick={handleNextButton}
                     disabled={currentPage === totalNumberOfPages}
+                    className={`px-4 py-2 rounded-md text-white font-medium transition duration-200 ${
+                        currentPage === totalNumberOfPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                    }`}
                 >
                     next
                 </button>
