@@ -40,9 +40,19 @@ export default function FlashcardApp() {
                 })}
             </div>
             <div>
-                <button onClick={handlePrevButton}>prev</button>
+                <button 
+                    onClick={handlePrevButton}
+                    disabled={currentPage === 1}
+                >
+                    prev
+                </button>
                 <button>{currentPage}</button>
-                <button onClick={handleNextButton}>next</button>
+                <button 
+                    onClick={handleNextButton}
+                    disabled={currentPage === totalNumberOfPages}
+                >
+                    next
+                </button>
             </div>
         </div>
     )
