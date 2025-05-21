@@ -1,10 +1,22 @@
 import { useState } from "react"
 
 export default function Debounce() {
-    const [input, setInput] = useState('')
+    const [defaultInput, setDefaultInput] = useState('')
+    const [debounceInput, setDebounceInput] = useState('')
 
     function handleOnchange(e) {
-        setInput(e.target.value)
+        setDefaultInput(e.target.value)
+        updateDebounce(e.target.value)
+    }
+
+    function updateDebounce(text) {
+        setDebounceInput(text)
+    }
+
+    console.log(debounceInput)
+
+    function debounce(cb, delay=1000) {
+
     }
 
     return (
@@ -12,13 +24,12 @@ export default function Debounce() {
             <input 
                 type="text" 
                 placeholder="enter text"
-                value={input}
                 onChange={handleOnchange}    
             />
             
             <div>
-                <p>Default: {input}</p>
-                <p>Debounce: {input}</p>
+                <p>Default: {defaultInput}</p>
+                <p>Debounce: {}</p>
             </div>
         </div>
     )
