@@ -5,18 +5,25 @@ export default function Debounce() {
     const [debounceInput, setDebounceInput] = useState('')
 
     function handleOnchange(e) {
+        const value = e.target.value
         setDefaultInput(e.target.value)
-        updateDebounce(e.target.value)
-    }
-
-    function updateDebounce(text) {
-        setDebounceInput(text)
+        debounce((value) => {
+            setDebounceInput(value)
+        }, 250)
     }
 
     console.log(debounceInput)
+    
 
     function debounce(cb, delay=1000) {
+        let timeout;
 
+        return (...args) => {
+            clearTimeout(timeout)
+            timeout = setTimeout(() => {
+                cb(...args)
+            }, delay)
+        }
     }
 
     return (
