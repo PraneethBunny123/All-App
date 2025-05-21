@@ -24,6 +24,7 @@ import TypingTracker from './project-apps/UseEffectMastery/TypingTracker'
 import InfiniteScroll from './project-apps/InfiniteScroll/InfiniteScroll'
 import NotesApp from './project-apps/Notes App/NotesApp'
 import FlashcardApp from './project-apps/QuizApp/FlashcardApp'
+import Debounce from './project-apps/Debounce/Debounce'
 
 function App() {
 
@@ -54,7 +55,8 @@ function App() {
       {/*<TypingTracker />*/}
       {/*<InfiniteScroll />*/}
       {/*<NotesApp />*/}
-      <FlashcardApp />
+      {/*<FlashcardApp />*/}
+      <Debounce />
     </div>
   )
 }
