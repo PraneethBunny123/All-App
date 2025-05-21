@@ -7,21 +7,17 @@ export default function Debounce() {
     function handleOnchange(e) {
         const value = e.target.value
         setDefaultInput(e.target.value)
-        debounce((value) => {
-            setDebounceInput(value)
-        }, 250)
     }
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setDebounceInput()
+            setDebounceInput(defaultInput)
         }, 1000)
 
         return () => {
             clearTimeout(timeout)
         }
     }, [defaultInput])
-
 
     return (
         <div>
@@ -33,7 +29,7 @@ export default function Debounce() {
             
             <div>
                 <p>Default: {defaultInput}</p>
-                <p>Debounce: {}</p>
+                <p>Debounce: {debounceInput}</p>
             </div>
         </div>
     )
