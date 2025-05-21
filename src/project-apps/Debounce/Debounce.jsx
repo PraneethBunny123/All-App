@@ -17,8 +17,8 @@ export default function Debounce() {
             />
             
             <div>
-                <p>Default: {}</p>
-                <p>Debounce: {}</p>
+                <p>Default: {input}</p>
+                <p>Debounce: {input}</p>
             </div>
         </div>
     )
