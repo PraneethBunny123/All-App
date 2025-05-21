@@ -20,16 +20,18 @@ export default function Debounce() {
     }, [defaultInput])
 
     return (
-        <div>
-            <input 
-                type="text" 
-                placeholder="enter text"
-                onChange={handleOnchange}    
-            />
-            
-            <div className="space-y-2">
-                <p className="text-gray-700 font-medium">Default: <span className="font-normal">{defaultInput}</span></p>
-                <p className="text-gray-700 font-medium">Debounce: <span className="font-normal">{debounceInput}</span></p>
+        <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+            <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md space-y-6">
+                <input 
+                    type="text" 
+                    placeholder="enter text"
+                    onChange={handleOnchange}    
+                />
+                
+                <div className="space-y-2">
+                    <p className="text-gray-700 font-medium">Default: <span className="font-normal">{defaultInput}</span></p>
+                    <p className="text-gray-700 font-medium">Debounce: <span className="font-normal">{debounceInput}</span></p>
+                </div>
             </div>
         </div>
     )
