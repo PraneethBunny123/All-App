@@ -27,9 +27,9 @@ export default function Debounce() {
                 onChange={handleOnchange}    
             />
             
-            <div>
-                <p>Default: {defaultInput}</p>
-                <p>Debounce: {debounceInput}</p>
+            <div className="space-y-2">
+                <p className="text-gray-700 font-medium">Default: <span className="font-normal">{defaultInput}</span></p>
+                <p className="text-gray-700 font-medium">Debounce: <span className="font-normal">{debounceInput}</span></p>
             </div>
         </div>
     )
