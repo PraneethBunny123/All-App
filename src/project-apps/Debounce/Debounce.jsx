@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Debounce() {
     const [defaultInput, setDefaultInput] = useState('')
@@ -12,19 +12,16 @@ export default function Debounce() {
         }, 250)
     }
 
-    console.log(debounceInput)
-    
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setDebounceInput()
+        }, 1000)
 
-    function debounce(cb, delay=1000) {
-        let timeout;
-
-        return (...args) => {
+        return () => {
             clearTimeout(timeout)
-            timeout = setTimeout(() => {
-                cb(...args)
-            }, delay)
         }
-    }
+    }, [defaultInput])
+
 
     return (
         <div>
