@@ -35,7 +35,7 @@ export default function Throttle() {
                 onChange={handleOnchange}    
             />
             <p>Default: {defaultInput}</p>
-            <p>Throttle: {}</p>
+            <p>Throttle: {throttleInput}</p>
         </div>
     )
 }
