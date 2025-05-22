@@ -17,13 +17,25 @@ export default function Throttle() {
     }
 
     function handleThrottle(cb, delay=1000) {
-        if(shouldWait.current) return
+        if(shouldWait.current) {
+            lastValue.current = cb
+            return
+        }
 
         cb()
         shouldWait.current = true
 
         setTimeout(() => {
             shouldWait.current = false
+            if(lastValue.current) {
+                lastValue.current() 
+                lastValue.current = null
+                shouldWait.current = true
+
+                setTimeout(() => {
+                    shouldWait.current = false
+                }, delay)
+            }
         }, delay)
     }
 
