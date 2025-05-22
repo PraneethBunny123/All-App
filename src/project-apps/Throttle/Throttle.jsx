@@ -41,14 +41,17 @@ export default function Throttle() {
 
 
     return (
-        <div>
-            <input 
-                type="text" 
-                placeholder="enter value..."
-                onChange={handleOnchange}    
-            />
-            <p>Default: {defaultInput}</p>
-            <p>Throttle: {throttleInput}</p>
+        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+            <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-md space-y-4">
+                <h2 className="text-2xl font-bold text-center text-blue-700">Throttle Demo</h2>
+                <input 
+                    type="text" 
+                    placeholder="enter value..."
+                    onChange={handleOnchange}    
+                />
+                <p>Default: {defaultInput}</p>
+                <p>Throttle: {throttleInput}</p>
+            </div>
         </div>
     )
 }
