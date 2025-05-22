@@ -5,6 +5,7 @@ export default function Throttle() {
     const [throttleInput, setThrottleInput] = useState('')
 
     const shouldWait = useRef(false)
+    const lastValue = useRef(null)
 
     function handleOnchange(e) {
         setDefaultInput(e.target.value)
