@@ -47,10 +47,13 @@ export default function Throttle() {
                 <input 
                     type="text" 
                     placeholder="enter value..."
-                    onChange={handleOnchange}    
+                    onChange={handleOnchange}   
+                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
                 />
-                <p>Default: {defaultInput}</p>
-                <p>Throttle: {throttleInput}</p>
+                <div className="space-y-2">
+                    <p className="text-gray-700"><span className="font-semibold">Default:</span> {defaultInput}</p>
+                    <p className="text-gray-700"><span className="font-semibold">Throttle:</span> {throttleInput}</p>
+                </div>
             </div>
         </div>
     )
