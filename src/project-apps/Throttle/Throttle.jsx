@@ -8,6 +8,10 @@ export default function Throttle() {
 
     function handleOnchange(e) {
         setDefaultInput(e.target.value)
+
+        handleThrottle(() => {
+            setThrottleInput(e.target.value)
+        }, 1000)
         
     }
 
