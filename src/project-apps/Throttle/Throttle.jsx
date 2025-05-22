@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 export default function Throttle() {
     const [defaultInput, setDefaultInput] = useState('')
     const [throttleInput, setThrottleInput] = useState('')
+
+    const shouldWait = useRef(false)
 
     function handleOnchange(e) {
         setDefaultInput(e.target.value)
@@ -10,10 +12,14 @@ export default function Throttle() {
     }
 
     function handleThrottle(cb, delay=1000) {
-        let shouldWait = false
+        if(shouldWait.current) return
 
         cb()
-        shouldWait = true
+        shouldWait.current = true
+
+        setTimeout(() => {
+            shouldWait.current = false
+        }, delay)
     }
 
 
