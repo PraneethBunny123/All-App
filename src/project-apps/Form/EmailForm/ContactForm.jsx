@@ -5,17 +5,17 @@ export default function ContactForm() {
         <section className='contact'>
             <form>
                 <h2>Contact Form</h2>
-                <div>
+                <div className='input-box'>
                     <label>Full Name</label>
-                    <input type="text" placeholder="enter full name" required />
+                    <input type="text" placeholder="enter full name" className='field' required />
                 </div>
-                <div>
+                <div className='input-box'>
                     <label>Email</label>
-                    <input type="text" placeholder="enter email" required />
+                    <input type="text" placeholder="enter email" className='field' required />
                 </div>
-                <div>
+                <div className='input-box'>
                     <label>Message</label>
-                    <textarea type="text" placeholder="enter your message" required />
+                    <textarea type="text" placeholder="enter your message" className='field' required />
                 </div>
                 <button type="submit">Send message</button>
             </form>
