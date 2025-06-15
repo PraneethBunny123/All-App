@@ -24,7 +24,11 @@ export default function ContactForm() {
         const resData = await response.json()
 
         if (resData.success) {
-            console.log("Success", resData);
+            Swal.fire({
+                title: "Form Submitted!",
+                text: "Message sent successfully",
+                icon: "success"
+            });
         }
     }
 
