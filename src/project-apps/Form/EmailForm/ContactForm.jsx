@@ -15,7 +15,7 @@ export default function ContactForm() {
                 </div>
                 <div className='input-box'>
                     <label>Message</label>
-                    <textarea type="text" placeholder="enter your message" className='field' required />
+                    <textarea type="text" placeholder="enter your message" className='field mess' required />
                 </div>
                 <button type="submit">Send message</button>
             </form>
