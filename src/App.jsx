@@ -26,6 +26,7 @@ import NotesApp from './project-apps/Notes App/NotesApp'
 import FlashcardApp from './project-apps/QuizApp/FlashcardApp'
 import Debounce from './project-apps/Debounce/Debounce'
 import Throttle from './project-apps/Throttle/Throttle'
+import ContactForm from './project-apps/Form/ContactForm'
 
 function App() {
 
@@ -58,7 +59,8 @@ function App() {
       {/*<NotesApp />*/}
       {/*<FlashcardApp />*/}
       {/*<Debounce />*/}
-      <Throttle />
+      {/*<Throttle />*/}
+      <ContactForm />
     </div>
   )
 }
