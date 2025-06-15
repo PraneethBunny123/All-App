@@ -56,4 +56,9 @@ form button {
     color: #fff;
     font-weight: 500;
     margin-top: 25px;
+    transition: .5s;
+}
+
+form button:hover {
+    background: #624ec6;
 }
