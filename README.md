@@ -1,12 +1,49 @@
-# React + Vite
+# All App — React Mini Projects & Reusable Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A curated collection of **small React projects and reusable components** that demonstrate common concepts (debounce, throttle, pagination, modals, etc.).  
+**Contributions welcome!** Add a new concept, improve an existing one, or extract reusable components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ What’s inside
 
-## Expanding the ESLint configuration
+Each concept lives in its own folder under `src/project-app/`:
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Accordion  
+- Counter  
+- Debounce  
+- Dropdown  
+- Form  
+- InfiniteScroll  
+- Modal  
+- Notes App  
+- Pagination  
+- Profile Card  
+- QuizApp  
+- Throttle  
+- Todo App  
+- Toggle  
+- UseEffectMastery  
+- Weather App
+
+> Have an idea that isn’t listed? Please add it! Even tiny improvements (docs, accessibility, tests) are appreciated.
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1) Fork this repo (top-right button on GitHub)
+
+# 2) Clone your fork
+git clone https://github.com/<your-username>/all-app.git
+# or with SSH:
+# git clone git@github.com:<your-username>/all-app.git
+
+cd all-app
+
+# 3) Install deps
+npm install
+
+# 4) Run the dev server
+npm run dev
