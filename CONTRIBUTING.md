@@ -29,7 +29,7 @@ We welcome:
    git checkout -b feature/<your-concept-name>
 
 4. **Add your concept under:**
-   - Export a main component (`index.jsx` or `<YourConcept>.jsx`).
+   - Export a main component (`<YourConcept>.jsx`).
    - Keep the code focused and well-named.
    - Add short usage notes as comments if helpful.
 
@@ -40,7 +40,7 @@ We welcome:
 6. **Commit and Push your changes:**
    ```bash
    git add .
-   git commit -m "feat: add <YourConcept> demo"
+   git commit -m "OnePiece: add <YourConcept> 🍉"
    git push origin feature/<your-concept-name>
 7. **Open a Pull Request (PR) from your branch to main:**
    - Clear title (e.g., feat: add InfiniteScroll demo)
