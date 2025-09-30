@@ -27,12 +27,13 @@ import FlashcardApp from './project-apps/QuizApp/FlashcardApp'
 import Debounce from './project-apps/Debounce/Debounce'
 import Throttle from './project-apps/Throttle/Throttle'
 import ContactForm from './project-apps/Form/EmailForm/ContactForm'
+import ReactQuery from './project-apps/ReactQuery/ReactQuery'
 
 function App() {
 
   return (
-    <div>
-      {/*<ProfileCard name='Praneeth' bio='I am learning react through projects '/>*/}
+      <div>
+        {/*<ProfileCard name='Praneeth' bio='I am learning react through projects '/>*/}
       {/*<Counter />*/}
       {/*<CounterReducer />*/}
       {/*<ListRender />*/}
@@ -60,9 +61,9 @@ function App() {
       {/*<FlashcardApp />*/}
       {/*<Debounce />*/}
       {/*<Throttle />*/}
-      <ContactForm />
+      {/* <ContactForm /> */}
+      <ReactQuery />
     </div>
-  )
+ )
 }
-
 export default App
