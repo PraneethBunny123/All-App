@@ -42,7 +42,7 @@ We welcome:
    git add .
    git commit -m "OnePiece: add <YourConcept> 🍉"
    git push origin feature/<your-concept-name>
-7. **Open a Pull Request (PR) from your branch to main:**
+7. **Open a Pull Request (PR) from your branch to develop:**
    - Clear title (e.g., feat: add InfiniteScroll demo)
    - Short description of what/why
 8. **PR Guidelines:**
